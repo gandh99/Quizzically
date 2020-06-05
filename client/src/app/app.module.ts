@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button'
 import { MatRadioModule } from '@angular/material/radio';
+import { IconsModule } from './icons/icons.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { QuestionCounterComponent } from './components/question-counter/question
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    IconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
