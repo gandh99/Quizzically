@@ -1,3 +1,6 @@
 <div class="options-container">
-    <div class="option" *ngFor='let option of options'>{{ option.text }}</div>
+    <div class="option" *ngFor='let option of options' (click)='selectOption(option)'>
+        <span class="text">{{ option.text }}</span>
+        <span [ngClass]="{'radio-button': true, 'selected': option.selected}" name="radio-option"></span>
+    </div>
 </div>

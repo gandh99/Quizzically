@@ -11,4 +11,20 @@
     padding: 1rem;
     color: var(--primary-text-color);
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.radio-button {
+    border: solid 2px var(--option-border-color);
+    justify-content: flex-end;
+    margin-left: auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+
+.selected {
+    background-color: var(--primary-button-color);
 }

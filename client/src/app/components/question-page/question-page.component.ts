@@ -8,15 +8,19 @@ import { RadioOption } from 'src/app/models/radio-option';
 })
 export class QuestionPageComponent implements OnInit {
   options: RadioOption[]
+  currentQuestionNumber: number
+  totalQuestions: number
 
   constructor() { }
 
   ngOnInit(): void {
     this.options = [
-      { text: 'The Botanical Gardens', selected: false},
-      { text: 'The Science Museum', selected: false},
-      { text: 'The Olympic Stadium', selected: false}
+      { id: 1, text: 'The Botanical Gardens', selected: false},
+      { id: 2, text: 'The Science Museum', selected: false},
+      { id: 3, text: 'The Olympic Stadium', selected: false}
     ]
+    this.currentQuestionNumber = 1
+    this.totalQuestions = 10
   }
 
 }

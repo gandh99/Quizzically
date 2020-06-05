@@ -7,11 +7,19 @@ import { RadioOption } from 'src/app/models/radio-option';
   styleUrls: ['./radio-option.component.css']
 })
 export class RadioOptionComponent implements OnInit {
-  @Input() options: RadioOption
+  @Input() options: RadioOption[]
+  selectedOption: RadioOption
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectOption(selectedOption: RadioOption) {
+    this.options = this.options.map((option: RadioOption) => {
+      option.selected = (option.id === selectedOption.id) ? true : false
+      return option
+    })
   }
 
 }
