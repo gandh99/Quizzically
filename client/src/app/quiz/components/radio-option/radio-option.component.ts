@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RadioOption } from 'src/app/models/radio-option';
+import { RadioOption } from '../../models/radio-option';
 
 @Component({
   selector: 'app-radio-option',
