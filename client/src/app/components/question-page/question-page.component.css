@@ -1,0 +1,40 @@
+@import url('../../../styles.css');
+.root {
+    text-align: center;
+    background-color: var(--primary-bg-color);
+    height: 100%;
+    padding: 2rem;
+}
+
+.question-number-section {
+    text-align: left;
+    margin: 2rem 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+}
+
+.total-questions {
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+.question {
+    color: var(--primary-text-color);
+    text-align: justify;
+    font-weight: 500;
+    margin: 2rem 0;
+}
+
+.options-container {
+    text-align: left;
+    margin: 4rem 0;
+}
+
+.option {
+    margin: 1.5rem 0;
+    border: solid 3px var(--option-border-color);
+    border-radius: 20px;
+    padding: 1rem;
+    color: var(--primary-text-color);
+}
