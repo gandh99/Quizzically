@@ -4,7 +4,7 @@ import { Question } from '../models/question';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.css']
+  styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
   questions: Question[]

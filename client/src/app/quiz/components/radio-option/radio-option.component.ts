@@ -4,7 +4,7 @@ import { RadioOption } from 'src/app/models/radio-option';
 @Component({
   selector: 'app-radio-option',
   templateUrl: './radio-option.component.html',
-  styleUrls: ['./radio-option.component.css']
+  styleUrls: ['./radio-option.component.scss']
 })
 export class RadioOptionComponent implements OnInit {
   @Input() options: RadioOption[]

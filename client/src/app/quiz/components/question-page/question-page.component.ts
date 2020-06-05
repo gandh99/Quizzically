@@ -4,7 +4,7 @@ import { Question } from 'src/app/models/question';
 @Component({
   selector: 'app-question-page',
   templateUrl: './question-page.component.html',
-  styleUrls: ['./question-page.component.css']
+  styleUrls: ['./question-page.component.scss']
 })
 export class QuestionPageComponent implements OnInit {
   @Input() questions: Question[]
