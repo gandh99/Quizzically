@@ -21,7 +21,15 @@ export class QuizComponent implements OnInit {
           { id: 3, text: 'The Olympic Stadium', selected: false }
         ],
         correctOption: { id: 1, text: 'The Botanical Gardens', selected: false }
-      }
+      },
+      {
+        question: 'Ducks are mammals.',
+        options: [
+          { id: 1, text: 'True', selected: false },
+          { id: 2, text: 'False', selected: false },
+        ],
+        correctOption: { id: 1, text: 'True', selected: false }
+      },
     ]
   }
 

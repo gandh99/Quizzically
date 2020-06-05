@@ -9,13 +9,17 @@ import { Question } from 'src/app/models/question';
 export class QuestionPageComponent implements OnInit {
   @Input() questions: Question[]
   currentQuestion: Question
-  currentQuestionNumber: number
+  currentQuestionIndex: number
 
   constructor() { }
 
   ngOnInit(): void {
-    this.currentQuestion = this.questions[0]
-    this.currentQuestionNumber = 1
+    this.currentQuestionIndex = 0
+    this.currentQuestion = this.questions[this.currentQuestionIndex]
+  }
+
+  nextQuestion() {
+    this.currentQuestion = this.questions[++this.currentQuestionIndex]
   }
 
 }
