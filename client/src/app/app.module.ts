@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuestionPageComponent } from './components/question-page/question-page.component';
 import { RadioOptionComponent } from './components/radio-option/radio-option.component';
 import { QuestionCounterComponent } from './components/question-counter/question-counter.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionPageComponent,
     RadioOptionComponent,
-    QuestionCounterComponent
+    QuestionCounterComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

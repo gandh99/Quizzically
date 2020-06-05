@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { RadioOption } from 'src/app/models/radio-option';
+import { Component, OnInit, Input } from '@angular/core';
+import { Question } from 'src/app/models/question';
 
 @Component({
   selector: 'app-question-page',
@@ -7,20 +7,15 @@ import { RadioOption } from 'src/app/models/radio-option';
   styleUrls: ['./question-page.component.css']
 })
 export class QuestionPageComponent implements OnInit {
-  options: RadioOption[]
+  @Input() questions: Question[]
+  currentQuestion: Question
   currentQuestionNumber: number
-  totalQuestions: number
 
   constructor() { }
 
   ngOnInit(): void {
-    this.options = [
-      { id: 1, text: 'The Botanical Gardens', selected: false},
-      { id: 2, text: 'The Science Museum', selected: false},
-      { id: 3, text: 'The Olympic Stadium', selected: false}
-    ]
+    this.currentQuestion = this.questions[0]
     this.currentQuestionNumber = 1
-    this.totalQuestions = 10
   }
 
 }

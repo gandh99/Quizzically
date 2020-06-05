@@ -1,10 +1,8 @@
 <div class="root">
-    <app-question-counter [currentQuestionNumber]='currentQuestionNumber' [totalQuestions]='totalQuestions'>
+    <app-question-counter [currentQuestionNumber]='currentQuestionNumber' [totalQuestions]='questions.length'>
     </app-question-counter>
-    <section class="question">
-        What attraction in Montreal is one of the largest in the world?
-    </section>
-    <app-radio-option [options]='options'>
+    <section class="question">{{ currentQuestion.question }}</section>
+    <app-radio-option [options]='currentQuestion.options'>
     </app-radio-option>
     <button mat-raised-button color="accent">Next</button>
 </div>
