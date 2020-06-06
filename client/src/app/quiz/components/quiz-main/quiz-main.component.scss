@@ -1,8 +1,16 @@
 @use '../../../../styles.scss';
-.root {
-    text-align: center;
+.background {
     background-color: styles.$primary-bg-color;
     height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: -10;
-    padding: 2rem;
+}
+
+.content {
+    text-align: center;
+    margin: 2rem;
 }
