@@ -1,8 +1,6 @@
-<div class="root">
-    <app-question-counter [currentQuestionNumber]='currentQuestionIndex + 1' [totalQuestions]='questions.length'>
-    </app-question-counter>
-    <section class="question">{{ currentQuestion.question }}</section>
-    <app-radio-option [options]='currentQuestion.options'>
-    </app-radio-option>
-    <button mat-raised-button color="accent" (click)='nextQuestion()'>Next</button>
-</div>
+<app-question-counter [currentQuestionNumber]='currentQuestionIndex + 1' [totalQuestions]='questions.length'>
+</app-question-counter>
+<section class="question">{{ currentQuestion.question }}</section>
+<app-radio-option [options]='currentQuestion.options'>
+</app-radio-option>
+<button mat-raised-button color="accent" (click)='nextQuestion()'>Next</button>

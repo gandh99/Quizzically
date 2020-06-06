@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuizModule } from './quiz/quiz.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { QuizModule } from './quiz/quiz.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    QuizModule
+    QuizModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
