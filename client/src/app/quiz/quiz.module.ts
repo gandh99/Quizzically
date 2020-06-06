@@ -6,18 +6,19 @@ import { IconsModule } from '../icons/icons.module';
 import { QuestionPageComponent } from './components/question-page/question-page.component';
 import { RadioOptionComponent } from './components/radio-option/radio-option.component';
 import { QuestionCounterComponent } from './components/question-counter/question-counter.component';
-import { QuizComponent } from './quiz.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { QuizMainComponent } from './components/quiz-main/quiz-main.component';
 
 
 @NgModule({
   declarations: [
-    QuizComponent,
+    QuizMainComponent,
     QuestionPageComponent,
     RadioOptionComponent,
     QuestionCounterComponent,
     StartPageComponent,
+    QuizMainComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +28,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   exports: [
-    QuizComponent
+    QuizMainComponent
   ]
 })
 export class QuizModule { }

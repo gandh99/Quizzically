@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from './models/question';
+import { Question } from '../../models/question';
 
 @Component({
-  selector: 'app-quiz',
-  templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.scss']
+  selector: 'app-quiz-main',
+  templateUrl: './quiz-main.component.html',
+  styleUrls: ['./quiz-main.component.scss']
 })
-export class QuizComponent implements OnInit {
+
+export class QuizMainComponent implements OnInit {
   questions: Question[]
   loadStartPage: boolean
   loadQuestionPage: boolean
