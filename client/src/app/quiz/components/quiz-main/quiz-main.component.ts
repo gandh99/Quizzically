@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from '../../models/question';
+import { QuizStage } from '../../models/quiz-stage';
 
 @Component({
   selector: 'app-quiz-main',
@@ -9,17 +10,14 @@ import { Question } from '../../models/question';
 
 export class QuizMainComponent implements OnInit {
   questions: Question[]
-  loadStartPage: boolean
-  loadQuestionPage: boolean
-  loadResultsPage: boolean
+  QuizStage = QuizStage
+  quizStage: QuizStage
   score: number
 
   constructor() { }
 
   ngOnInit(): void {
-    this.loadStartPage = true
-    this.loadQuestionPage = false
-    this.loadResultsPage = false
+    this.quizStage = QuizStage.START_PAGE
 
     // Sample questions
     this.questions = [
@@ -43,14 +41,12 @@ export class QuizMainComponent implements OnInit {
     ]
   }
 
-  onStartQuiz(start: boolean) {
-    this.loadStartPage = false
-    this.loadQuestionPage = true
+  changeQuizStage(quizStage: QuizStage) {
+    this.quizStage = quizStage
   }
 
   onEndQuiz(score: number) {
-    this.loadQuestionPage = false
-    this.loadResultsPage = true
+    this.quizStage = QuizStage.RESULTS_PAGE
     this.score = score
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { QuizStage } from '../../models/quiz-stage';
 
 @Component({
   selector: 'app-start-page',
@@ -6,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./start-page.component.scss']
 })
 export class StartPageComponent implements OnInit {
-  @Output() startQuiz = new EventEmitter<boolean>()
+  @Output() startQuiz = new EventEmitter<QuizStage>()
 
   constructor() { }
 
@@ -14,7 +15,7 @@ export class StartPageComponent implements OnInit {
   }
 
   next() {
-    this.startQuiz.emit(true)
+    this.startQuiz.emit(QuizStage.QUESTIONS_PAGE)
   }
 
 }

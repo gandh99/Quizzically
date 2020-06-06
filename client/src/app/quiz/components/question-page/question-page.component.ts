@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Question } from '../../models/question';
 import { RadioOption } from '../../models/radio-option';
+import { QuizStage } from '../../models/quiz-stage';
 
 @Component({
   selector: 'app-question-page',

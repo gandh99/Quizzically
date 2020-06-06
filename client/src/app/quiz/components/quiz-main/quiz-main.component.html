@@ -1,5 +1,5 @@
 <div class="root">
-    <app-start-page *ngIf='loadStartPage' (startQuiz)='onStartQuiz($event)'></app-start-page>
-    <app-question-page *ngIf='loadQuestionPage' [questions]='questions' (endQuiz)='onEndQuiz($event)'></app-question-page>
-    <app-results-page *ngIf='loadResultsPage' [score]='score'></app-results-page>
+    <app-start-page *ngIf='quizStage === QuizStage.START_PAGE' (startQuiz)='changeQuizStage($event)'></app-start-page>
+    <app-question-page *ngIf='quizStage === QuizStage.QUESTIONS_PAGE' [questions]='questions' (endQuiz)='onEndQuiz($event)'></app-question-page>
+    <app-results-page *ngIf='quizStage === QuizStage.RESULTS_PAGE' [score]='score'></app-results-page>
 </div>
