@@ -5,7 +5,7 @@
 }
 
 .option {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     border: solid 3px styles.$option-border-color;
     border-radius: 20px;
     padding: 1rem;
@@ -41,4 +41,23 @@
     top: 4px;
     left: 4px;
     color: white;
+}
+
+@media (min-width: styles.$m-size) {
+    .options-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .option {
+        min-width: 42%;
+    }
+}
+
+@media (min-width: styles.$l-size) {
+    .option {
+        min-width: 45%;
+    }
 }
