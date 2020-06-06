@@ -7,7 +7,6 @@ import { QuestionPageComponent } from './components/question-page/question-page.
 import { RadioOptionComponent } from './components/radio-option/radio-option.component';
 import { QuestionCounterComponent } from './components/question-counter/question-counter.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
-import { SharedModule } from '../shared/shared.module';
 import { QuizMainComponent } from './components/quiz-main/quiz-main.component';
 
 
@@ -25,7 +24,6 @@ import { QuizMainComponent } from './components/quiz-main/quiz-main.component';
     MatButtonModule,
     MatRadioModule,
     IconsModule,
-    SharedModule
   ],
   exports: [
     QuizMainComponent
