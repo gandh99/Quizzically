@@ -39,4 +39,9 @@ export class QuizComponent implements OnInit {
     ]
   }
 
+  onStartQuiz(start: boolean) {
+    this.loadStartPage = false
+    this.loadQuestionPage = true
+  }
+
 }

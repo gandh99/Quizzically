@@ -1,2 +1,2 @@
-<app-start-page *ngIf='loadStartPage'></app-start-page>
+<app-start-page *ngIf='loadStartPage' (startQuiz)='onStartQuiz($event)'></app-start-page>
 <app-question-page *ngIf='loadQuestionPage' [questions]='questions'></app-question-page>

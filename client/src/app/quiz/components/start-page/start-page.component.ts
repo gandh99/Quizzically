@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-start-page',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-page.component.scss']
 })
 export class StartPageComponent implements OnInit {
+  @Output() startQuiz = new EventEmitter<boolean>()
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  next() {
+    this.startQuiz.emit(true)
   }
 
 }
