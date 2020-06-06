@@ -1,0 +1,83 @@
+@use '../../../../styles.scss';
+
+.background {
+    background: styles.$primary-color-light;
+    background: linear-gradient(209deg, styles.$primary-color-light 15%, styles.$primary-color-dark 78%);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+}
+
+.root {
+    margin-top: 2rem;
+}
+
+.header {
+    text-align: center;
+    color: styles.$primary-color-contrast-text;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.logo {
+    width: 4rem;
+}
+
+.container {
+    text-align: center;
+    background-color: styles.$container-color-secondary;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    border-radius: 10px;
+    padding: 2.5rem;
+}
+
+input[type=text],
+input[type=password] {
+    box-sizing : border-box;
+}
+
+.textfield {
+    background-color: styles.$textfield-background-main;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.button {
+    background-color: styles.$secondary-color-main;
+    color: styles.$secondary-color-contrast-text;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: styles.$secondary-color-dark;
+}
+
+.message {
+    font-size: 0.9rem;
+}
+
+.link {
+    color: styles.$secondary-color-main;
+    font-weight: bold;
+    cursor: pointer;
+}

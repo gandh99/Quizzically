@@ -8,13 +8,32 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow-y: hidden;
 }
 
+// Old
 $primary-bg-color: #252c4a;
 $primary-text-color: #ffffff;
 $secondary-text-color: #919ac3;
 $option-border-color: #21486a;
 $primary-button-color: #107eeb;
+
+// New
+$primary-color-main: #4c62df;
+$primary-color-light: #6985eb;
+$primary-color-dark: #4468ed;
+$primary-color-contrast-text: #ffffff;
+
+$secondary-color-main: #ff4081;
+$secondary-color-light: #ff558d;
+$secondary-color-dark: #fd256d;
+$secondary-color-contrast-text: #ffffff;
+
+$container-color-main: #eff1f8;
+$container-color-secondary: #ffffff;
+$container-border-radius: 20px;
+
+$textfield-background-main: #eeeeee;
 
 $xs-size: 320px;
 $s-size: 480px;
