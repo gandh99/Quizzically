@@ -8,6 +8,7 @@ import { RadioOptionComponent } from './components/radio-option/radio-option.com
 import { QuestionCounterComponent } from './components/question-counter/question-counter.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { QuizMainComponent } from './components/quiz-main/quiz-main.component';
+import { ResultsPageComponent } from './components/results-page/results-page.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { QuizMainComponent } from './components/quiz-main/quiz-main.component';
     QuestionCounterComponent,
     StartPageComponent,
     QuizMainComponent,
+    ResultsPageComponent,
   ],
   imports: [
     CommonModule,

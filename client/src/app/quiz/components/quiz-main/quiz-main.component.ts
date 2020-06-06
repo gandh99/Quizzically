@@ -11,12 +11,15 @@ export class QuizMainComponent implements OnInit {
   questions: Question[]
   loadStartPage: boolean
   loadQuestionPage: boolean
+  loadResultsPage: boolean
+  score: number
 
   constructor() { }
 
   ngOnInit(): void {
     this.loadStartPage = true
     this.loadQuestionPage = false
+    this.loadResultsPage = false
 
     // Sample questions
     this.questions = [
@@ -43,6 +46,12 @@ export class QuizMainComponent implements OnInit {
   onStartQuiz(start: boolean) {
     this.loadStartPage = false
     this.loadQuestionPage = true
+  }
+
+  onEndQuiz(score: number) {
+    this.loadQuestionPage = false
+    this.loadResultsPage = true
+    this.score = score
   }
 
 }

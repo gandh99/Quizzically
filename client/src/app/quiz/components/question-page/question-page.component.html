@@ -2,6 +2,6 @@
 </app-question-counter>
 <hr />
 <section class="question-text">{{ currentQuestion.question }}</section>
-<app-radio-option [options]='currentQuestion.options'>
+<app-radio-option [options]='currentQuestion.options' (selectedOption)='selectOption($event)'>
 </app-radio-option>
-<button mat-raised-button color="accent" (click)='nextQuestion()'>Next</button>
+<button mat-raised-button color="accent" (click)='updateScore(); next()'>Next</button>

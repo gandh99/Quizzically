@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { RadioOption } from '../../models/radio-option';
 
 @Component({
@@ -8,7 +8,7 @@ import { RadioOption } from '../../models/radio-option';
 })
 export class RadioOptionComponent implements OnInit {
   @Input() options: RadioOption[]
-  selectedOption: RadioOption
+  @Output() selectedOption = new EventEmitter<RadioOption>()
 
   constructor() { }
 
@@ -20,6 +20,7 @@ export class RadioOptionComponent implements OnInit {
       option.selected = (option.id === selectedOption.id) ? true : false
       return option
     })
+    this.selectedOption.emit(selectedOption)
   }
 
 }
