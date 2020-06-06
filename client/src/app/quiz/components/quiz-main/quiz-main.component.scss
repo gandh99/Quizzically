@@ -1,7 +1,8 @@
-@import url('../../../../styles.scss');
+@use '../../../../styles.scss';
 .root {
     text-align: center;
-    background-color: var(--primary-bg-color);
+    background-color: styles.$primary-bg-color;
     height: 100%;
     z-index: -10;
+    padding: 2rem;
 }

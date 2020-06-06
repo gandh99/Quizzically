@@ -1,10 +1,10 @@
-@import url('../../../../styles.scss');
+@use '../../../../styles.scss';
 
 .question-number-section {
     text-align: left;
     font-weight: 500;
     font-size: 1.2rem;
-    color: var(--secondary-text-color);
+    color: styles.$secondary-text-color;
 }
 
 .total-questions {

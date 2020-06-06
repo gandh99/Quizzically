@@ -1,6 +1,6 @@
 <div class="options-container">
     <div class="option" *ngFor='let option of options' (click)='selectOption(option)'>
-        <span class="text">{{ option.text }}</span>
+        <span class="option-text">{{ option.text }}</span>
         <span [ngClass]="{'radio-button': true, 'selected': option.selected}" name="radio-option">
             <i-feather class="check-icon" name="check" *ngIf='option.selected'></i-feather>
         </span>

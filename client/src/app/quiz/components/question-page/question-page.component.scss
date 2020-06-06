@@ -1,7 +1,7 @@
-@import url('../../../../styles.scss');
+@use '../../../../styles.scss';
 
-.question {
-    color: var(--primary-text-color);
+.question-text {
+    color: styles.$primary-text-color;
     text-align: justify;
     font-weight: 500;
     margin: 2rem 0;
