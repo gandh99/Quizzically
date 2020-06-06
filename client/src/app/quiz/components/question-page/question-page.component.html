@@ -1,5 +1,6 @@
 <app-question-counter [currentQuestionNumber]='currentQuestionIndex + 1' [totalQuestions]='questions.length'>
 </app-question-counter>
+<hr />
 <section class="question-text">{{ currentQuestion.question }}</section>
 <app-radio-option [options]='currentQuestion.options'>
 </app-radio-option>
