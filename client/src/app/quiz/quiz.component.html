@@ -1,1 +1,2 @@
-<app-question-page [questions]='questions'></app-question-page>
+<app-start-page *ngIf='loadStartPage'></app-start-page>
+<app-question-page *ngIf='loadQuestionPage' [questions]='questions'></app-question-page>

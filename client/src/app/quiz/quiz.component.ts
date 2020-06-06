@@ -8,10 +8,16 @@ import { Question } from './models/question';
 })
 export class QuizComponent implements OnInit {
   questions: Question[]
+  loadStartPage: boolean
+  loadQuestionPage: boolean
 
   constructor() { }
 
   ngOnInit(): void {
+    this.loadStartPage = true
+    this.loadQuestionPage = false
+
+    // Sample questions
     this.questions = [
       {
         question: 'What attraction in Montreal is one of the largest in the world?',
