@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IconsModule } from '../icons/icons.module';
-import { ExploreComponent } from './components/explore/explore.component';
-import { AccountComponent } from './components/account/account.component';
-import { OverviewComponent } from './components/overview/overview.component';
+import { OverviewModule } from '../overview/overview.module';
+import { ExploreModule } from '../explore/explore.module';
+import { AccountModule } from '../account/account.module';
 
 
 
 @NgModule({
-  declarations: [HomepageComponent, NavbarComponent, ExploreComponent, AccountComponent, OverviewComponent],
+  declarations: [HomepageComponent, NavbarComponent],
   imports: [
     CommonModule,
-    IconsModule
+    IconsModule,
+    OverviewModule,
+    ExploreModule,
+    AccountModule
   ]
 })
 export class HomeModule { }
