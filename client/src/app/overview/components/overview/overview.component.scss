@@ -1,9 +1,14 @@
 @use '../../../../styles.scss';
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .add-button {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
+    position: fixed;
+    bottom: 3.5rem;
+    right: 1.5rem;
     width: 3rem;
     height: 3rem;
     background-color: styles.$secondary-color-main;
@@ -19,4 +24,20 @@
     margin-top: 0.7rem;
     margin-left: 0.8rem;
     color: styles.$secondary-color-contrast-text;
+}
+
+@media (min-width: styles.$m-size) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-flow: row;
+    }
+}
+
+@media (min-width: styles.$l-size) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-flow: row;
+    }
 }

@@ -1,0 +1,38 @@
+@use '../../../../styles.scss';
+
+.root {
+    margin: 1rem;
+    background-color: styles.$primary-color-light;
+    padding: 1rem;
+    border-radius: styles.$container-border-radius;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+header {
+    font-weight: bold;
+    color: styles.$primary-color-contrast-text;
+}
+
+section {
+    color: #eeeeee;
+}
+
+footer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.stat {
+    margin-right: 1rem;
+}
+
+.icon {
+    margin-right: 0.2rem;
+    width: 1rem;
+}
+
+.icon, .icon-number {
+    color: #eeeeee;
+}
