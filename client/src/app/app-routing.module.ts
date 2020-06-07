@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'quiz', component: QuizMainComponent },
   { path: 'authentication', component: AuthenticationMainComponent },
   { path: 'home', component: HomepageComponent },
-  { path: '', redirectTo: '/quiz', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: QuizMainComponent },
 ];
 

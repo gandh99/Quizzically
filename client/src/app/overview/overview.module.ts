@@ -10,7 +10,7 @@ import { QuizOverviewCardComponent } from './components/quiz-overview-card/quiz-
   declarations: [OverviewComponent, QuizOverviewCardComponent],
   imports: [
     CommonModule,
-    IconsModule
+    IconsModule,
   ],
   exports: [
     OverviewComponent,
