@@ -2,11 +2,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticationForm } from '../../models/form';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   @Output() form = new EventEmitter<AuthenticationForm>()
 
   constructor() { }
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   }
 
   loadForm() {
-    this.form.emit(AuthenticationForm.REGISTER)
+    this.form.emit(AuthenticationForm.LOGIN)
   }
 
 }

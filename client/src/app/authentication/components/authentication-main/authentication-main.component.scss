@@ -1,0 +1,29 @@
+@use '../../../../styles.scss';
+
+.background {
+    background: styles.$primary-color-light;
+    background: linear-gradient(209deg, styles.$primary-color-light 15%, styles.$primary-color-dark 78%);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+}
+
+.root {
+    margin-top: 2rem;
+}
+
+.header {
+    text-align: center;
+    color: styles.$primary-color-contrast-text;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.logo {
+    width: 4rem;
+}

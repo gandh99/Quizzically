@@ -1,0 +1,9 @@
+<div class="background"></div>
+<div class="root">
+    <div class="header">
+        <i-feather class="logo" name="codepen"></i-feather>
+        <div class="title">Quizzically</div>
+    </div>
+    <app-login *ngIf='authenticationForm === AuthenticationForm.LOGIN' (form)='loadForm($event)'></app-login>
+    <app-register *ngIf='authenticationForm === AuthenticationForm.REGISTER' (form)='loadForm($event)'></app-register>
+</div>
