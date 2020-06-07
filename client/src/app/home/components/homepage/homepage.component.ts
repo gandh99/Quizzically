@@ -7,13 +7,14 @@ import { PageDisplay } from '../../models/page-display';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  PageDisplay = PageDisplay
   header: string
   currentPage: PageDisplay
 
   constructor() { }
 
   ngOnInit(): void {
-    this.currentPage = PageDisplay.HOME
+    this.currentPage = PageDisplay.OVERVIEW
     this.header = PageDisplay[this.currentPage]
   }
 

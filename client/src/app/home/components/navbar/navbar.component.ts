@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.selectedPage = PageDisplay.HOME
+    this.selectedPage = PageDisplay.OVERVIEW
   }
 
   selectPage(page: PageDisplay) {

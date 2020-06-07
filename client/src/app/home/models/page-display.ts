@@ -1,5 +1,5 @@
 export enum PageDisplay {
-    HOME,
+    OVERVIEW,
     EXPLORE,
     ACCOUNT
 }

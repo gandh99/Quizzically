@@ -6,7 +6,9 @@
     </div>
 </header>
 <main>
-
+    <app-overview *ngIf='currentPage === PageDisplay.OVERVIEW'></app-overview>
+    <app-explore *ngIf='currentPage === PageDisplay.EXPLORE'></app-explore>
+    <app-account *ngIf='currentPage === PageDisplay.ACCOUNT'></app-account>
 </main>
 <footer>
     <app-navbar (navItem)='changePage($event)'></app-navbar>
