@@ -1,0 +1,15 @@
+@use '../../../../styles.scss';
+
+nav {
+    width: 100%;
+    background-color: styles.$container-color-main;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0.5rem 0;
+}
+
+.icon {
+    color: #aaaaaa;
+    cursor: pointer;
+}

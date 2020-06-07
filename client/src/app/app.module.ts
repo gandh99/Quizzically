@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuizModule } from './quiz/quiz.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AuthenticationModule } from './authentication/authentication.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     QuizModule,
-    AuthenticationModule
+    AuthenticationModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
