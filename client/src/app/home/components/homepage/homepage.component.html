@@ -1,8 +1,8 @@
 <div class="background"></div>
-<header>Home</header>
+<header>{{ header | titlecase }}</header>
 <main>
     
 </main>
 <footer>
-    <app-navbar></app-navbar>
+    <app-navbar (navItem)='changePage($event)'></app-navbar>
 </footer>

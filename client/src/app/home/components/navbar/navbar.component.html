@@ -1,5 +1,5 @@
 <nav>
-    <i-feather class="icon" name="home"></i-feather>
-    <i-feather class="icon" name="globe"></i-feather>
-    <i-feather class="icon" name="user"></i-feather>
+    <i-feather (click)='selectPage(PageDisplay.HOME)' [ngClass]="{'icon': true, selected: selectedPage === PageDisplay.HOME}" name="home"></i-feather>
+    <i-feather (click)='selectPage(PageDisplay.EXPLORE)' [ngClass]="{'icon': true, selected: selectedPage === PageDisplay.EXPLORE}" name="globe"></i-feather>
+    <i-feather (click)='selectPage(PageDisplay.ACCOUNT)' [ngClass]="{'icon': true, selected: selectedPage === PageDisplay.ACCOUNT}" name="user"></i-feather>
 </nav>
