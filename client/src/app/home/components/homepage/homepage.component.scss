@@ -16,6 +16,13 @@ header {
     margin: 2rem;
     color: styles.$primary-color-contrast-text;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.settings {
+    margin-left: auto;
+    cursor: pointer;
 }
 
 main {

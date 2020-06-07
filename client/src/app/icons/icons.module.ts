@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { FeatherModule } from 'angular-feather';
-import { Check, Codepen, Home, Globe, PlusCircle, User } from 'angular-feather/icons';
+import { Check, Codepen, Home, Globe, User, Settings } from 'angular-feather/icons';
 
 // Select some icons (use an object, not an array)
 const icons = {
@@ -9,8 +9,8 @@ const icons = {
   Codepen,
   Home,
   Globe,
-  PlusCircle,
-  User
+  User,
+  Settings
 };
 
 @NgModule({

@@ -1,7 +1,12 @@
 <div class="background"></div>
-<header>{{ header | titlecase }}</header>
+<header>
+    <div class="title">{{ header | titlecase }}</div>
+    <div class="settings">
+        <i-feather name="settings"></i-feather>
+    </div>
+</header>
 <main>
-    
+
 </main>
 <footer>
     <app-navbar (navItem)='changePage($event)'></app-navbar>
