@@ -6,11 +6,12 @@ import { MaterialUIModule } from '../material-ui/material-ui.module';
 import { QuizInformationComponent } from './components/quiz-information/quiz-information.component';
 import { QuizBodyComponent } from './components/quiz-body/quiz-body.component';
 import { QuizSaveComponent } from './components/quiz-save/quiz-save.component';
+import { DraftQuizItemComponent } from './components/draft-quiz-item/draft-quiz-item.component';
 
 
 
 @NgModule({
-  declarations: [CreateQuizMainComponent, QuizInformationComponent, QuizBodyComponent, QuizSaveComponent],
+  declarations: [CreateQuizMainComponent, QuizInformationComponent, QuizBodyComponent, QuizSaveComponent, DraftQuizItemComponent],
   imports: [
     CommonModule,
     IconsModule,

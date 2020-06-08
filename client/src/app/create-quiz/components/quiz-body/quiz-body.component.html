@@ -4,7 +4,6 @@
     <div class="title"><b>Step 2:</b> Add some quiz questions</div>
 </header>
 <main *ngIf='showBody'>
-    <input class="input" type="text" placeholder="Quiz Title" />
-    <input class="input" type="text" placeholder="Short Description" />
-    <button class="button">Add Quiz Item</button>
+    <app-draft-quiz-item></app-draft-quiz-item>
+    <button class="button" (click)='addQuizItem()'>Add Quiz Item</button>
 </main>

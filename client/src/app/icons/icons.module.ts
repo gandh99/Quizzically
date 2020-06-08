@@ -13,7 +13,8 @@ import {
   Heart,
   ArrowLeft,
   ChevronRight,
-  ChevronDown
+  ChevronDown,
+  XCircle
 } from 'angular-feather/icons';
 
 // Select some icons (use an object, not an array)
@@ -29,7 +30,8 @@ const icons = {
   Heart,
   ArrowLeft,
   ChevronRight,
-  ChevronDown
+  ChevronDown,
+  XCircle
 };
 
 @NgModule({

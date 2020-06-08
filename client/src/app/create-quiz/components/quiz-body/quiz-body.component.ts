@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DraftQuizItem } from '../../models/draft-quiz-item';
 
 @Component({
   selector: 'app-quiz-body',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizBodyComponent implements OnInit {
   showBody: boolean
+  draftQuizItems: DraftQuizItem[]
 
   constructor() { }
 
@@ -16,6 +18,10 @@ export class QuizBodyComponent implements OnInit {
 
   toggleShowBody() {
     this.showBody = !this.showBody
+  }
+
+  addQuizItem() {
+    
   }
 
 }
