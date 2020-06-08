@@ -38,21 +38,6 @@ main {
     border-top-right-radius: styles.$container-border-radius;
     border-top: solid 1rem transparent;
     padding: 0 1rem;
-
-    input[type="text"],
-    input[type="password"] {
-        box-sizing: border-box;
-    }
-
-    .textfield {
-        background-color: styles.$textfield-background-main;
-        border: none;
-        border-radius: 10px;
-        width: 100%;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        display: block;
-    }
 }
 
 footer {

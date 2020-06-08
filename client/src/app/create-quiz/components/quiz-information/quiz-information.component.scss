@@ -1,0 +1,10 @@
+@use '../../../../styles.scss';
+
+.card {
+    width: 100%;
+    background-color: styles.$container-color-secondary;
+    padding: 1rem;
+    border-radius: styles.$container-border-radius;
+    border: transparent;
+    margin-bottom: 1rem;
+}
