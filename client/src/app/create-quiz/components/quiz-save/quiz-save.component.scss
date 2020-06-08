@@ -15,28 +15,21 @@ header {
 }
 
 main {
-    margin: 0 2.5rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    margin-bottom: 2rem;
 
-    .input {
-        width: 100%;
-        background-color: styles.$container-color-secondary;
-        padding: 1rem;
-        border-radius: styles.$container-border-radius;
-        border: transparent;
-        margin-bottom: 1rem;
-    }
-        
     .button {
         width: 100%;
         padding: 0.8rem;
-        background-color: styles.$primary-color-light;
-        color: styles.$primary-color-contrast-text;
+        background-color: styles.$secondary-color-light;
+        color: styles.$secondary-color-contrast-text;
         border: none;
         border-radius: styles.$container-border-radius;
         cursor: pointer;
     }
 
     .button:hover {
-        background-color: styles.$primary-color-dark;
+        background-color: styles.$secondary-color-dark;
     }
 }

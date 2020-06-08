@@ -1,14 +1,5 @@
 @use '../../../../styles.scss';
 
-.card {
-    width: 100%;
-    background-color: styles.$container-color-secondary;
-    padding: 1rem;
-    border-radius: styles.$container-border-radius;
-    border: transparent;
-    margin-bottom: 1rem;
-}
-
 header {
     margin: 1rem;
     color: #333333;
@@ -20,5 +11,18 @@ header {
     .icon {
         width: 1.2rem;
         margin-right: 0.5rem;
+    }
+}
+
+main {
+    margin: 0 2.5rem;
+
+    .input {
+        width: 100%;
+        background-color: styles.$container-color-secondary;
+        padding: 1rem;
+        border-radius: styles.$container-border-radius;
+        border: transparent;
+        margin-bottom: 1rem;
     }
 }

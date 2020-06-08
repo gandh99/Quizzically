@@ -1,9 +1,8 @@
 <header (click)='toggleShowBody()'>
     <i-feather *ngIf='!showBody' class="icon" name='chevron-right'></i-feather>
     <i-feather *ngIf='showBody' class="icon" name='chevron-down'></i-feather>
-    <div class="title"><b>Step 1:</b> Fill in quiz information</div>
+    <div class="title"><b>Step 3:</b> Save your quiz</div>
 </header>
 <main *ngIf='showBody'>
-    <input class="input" type="text" placeholder="Quiz Title" />
-    <input class="input" type="text" placeholder="Short Description" />
+    <button class="button">Save Quiz</button>
 </main>
