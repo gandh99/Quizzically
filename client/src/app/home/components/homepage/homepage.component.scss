@@ -18,12 +18,13 @@ header {
     font-size: 1.5rem;
     display: flex;
     flex-direction: row;
+    
+    .settings {
+        margin-left: auto;
+        cursor: pointer;
+    }
 }
 
-.settings {
-    margin-left: auto;
-    cursor: pointer;
-}
 
 main {
     position: absolute;

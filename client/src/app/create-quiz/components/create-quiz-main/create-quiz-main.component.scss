@@ -12,10 +12,14 @@
 }
 
 header {
+    margin: 2rem;
+    color: styles.$primary-color-contrast-text;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: row;
 
     .back-icon {
         cursor: pointer;
+        margin-right: 1rem;
     }
 }
