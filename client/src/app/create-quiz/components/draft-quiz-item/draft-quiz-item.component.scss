@@ -8,21 +8,49 @@
 }
 
 header {
-    margin: 1rem 0;
+    margin: 0rem 0;
     color: #333333;
     font-size: 1rem;
     display: flex;
     flex-direction: row;
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
 
-    .icon {
-        width: 1.2rem;
-        margin-right: 0.5rem;
+    .plus-icon {
+        color: green;
+    }
+}
+
+.icon {
+    width: 1.2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.close-icon {
+    color: red;
+}
+
+main {
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+}
+
+.quiz-option {
+    display: flex;
+    flex-direction: row;
+
+    .check-icon {
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        border: solid 1px #bbbbbb;
         cursor: pointer;
     }
 
-    #close-icon {
-        color: red;
+    .quiz-option-input {
+        padding: 0rem 1rem;
     }
 }
 
