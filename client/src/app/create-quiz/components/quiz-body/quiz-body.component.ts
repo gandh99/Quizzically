@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-quiz-information',
-  templateUrl: './quiz-information.component.html',
-  styleUrls: ['./quiz-information.component.scss']
+  selector: 'app-quiz-body',
+  templateUrl: './quiz-body.component.html',
+  styleUrls: ['./quiz-body.component.scss']
 })
-export class QuizInformationComponent implements OnInit {
+export class QuizBodyComponent implements OnInit {
   showBody: boolean
 
   constructor() { }

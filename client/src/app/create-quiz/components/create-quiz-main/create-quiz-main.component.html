@@ -6,9 +6,8 @@
         <div class="title">Create Quiz</div>
     </header>
     <main>
-        <app-quiz-information *ngIf='currentSection === CreateQuizSection.START'></app-quiz-information>
+        <app-quiz-information></app-quiz-information>
+        <hr />
+        <app-quiz-body></app-quiz-body>
     </main>
-    <footer>
-        <app-navbar (quizSection)='changeSection($event)'></app-navbar>
-    </footer>
 </div>

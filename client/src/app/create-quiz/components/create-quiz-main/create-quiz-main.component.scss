@@ -27,7 +27,7 @@ header {
 main {
     position: absolute;
     top: 6rem;
-    bottom: 2.5rem;
+    bottom: 0;
     left: 0;
     right: 0;
     overflow: auto;
@@ -40,10 +40,7 @@ main {
     padding: 0 1rem;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
+hr {
+    color: #dddddd;
+    margin: 1rem 0.5rem;
 }

@@ -12,8 +12,8 @@ import {
   Activity,
   Heart,
   ArrowLeft,
-  Clipboard,
-  Book
+  ChevronRight,
+  ChevronDown
 } from 'angular-feather/icons';
 
 // Select some icons (use an object, not an array)
@@ -28,8 +28,8 @@ const icons = {
   Activity,
   Heart,
   ArrowLeft,
-  Clipboard,
-  Book
+  ChevronRight,
+  ChevronDown
 };
 
 @NgModule({
