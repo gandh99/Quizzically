@@ -23,3 +23,42 @@ header {
         margin-right: 1rem;
     }
 }
+
+main {
+    position: absolute;
+    top: 6rem;
+    bottom: 2.5rem;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    background-color: styles.$container-color-main;
+    border-top-left-radius: styles.$container-border-radius;
+    border-top-right-radius: styles.$container-border-radius;
+    border-top: solid 1rem transparent;
+    padding: 0 1rem;
+
+    input[type="text"],
+    input[type="password"] {
+        box-sizing: border-box;
+    }
+
+    .textfield {
+        background-color: styles.$textfield-background-main;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        display: block;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
