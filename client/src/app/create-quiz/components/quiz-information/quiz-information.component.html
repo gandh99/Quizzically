@@ -4,6 +4,7 @@
     <div class="title"><b>Step 1:</b> Fill in quiz information</div>
 </header>
 <main *ngIf='showBody'>
-    <input class="input" type="text" placeholder="Quiz Title" />
-    <input class="input" type="text" placeholder="Short Description" />
+    <input (input)='setQuizTitle($event.target.value)' class="input" type="text" placeholder="Quiz Title" />
+    <input (input)='setQuizDescription($event.target.value)' class="input" type="text"
+        placeholder="Short Description" />
 </main>

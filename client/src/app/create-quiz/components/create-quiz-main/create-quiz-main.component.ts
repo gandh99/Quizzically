@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { QuizInformation } from '../../models/quiz-information';
 
 @Component({
   selector: 'app-create-quiz-main',
@@ -7,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CreateQuizMainComponent implements OnInit {
   @Output() createQuiz = new EventEmitter<boolean>()
+  quizInformation: QuizInformation
   
   constructor() { }
 
@@ -15,6 +17,10 @@ export class CreateQuizMainComponent implements OnInit {
 
   loadCreateQuiz(load: boolean) {
     this.createQuiz.emit(load)
+  }
+
+  setQuizInformation(quizInformation: QuizInformation) {
+    this.quizInformation = quizInformation
   }
 
 }

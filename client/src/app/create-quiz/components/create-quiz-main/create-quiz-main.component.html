@@ -6,7 +6,7 @@
         <div class="title">Create Quiz</div>
     </header>
     <main>
-        <app-quiz-information></app-quiz-information>
+        <app-quiz-information (quizInformation)='setQuizInformation($event)'></app-quiz-information>
         <hr />
         <app-quiz-body></app-quiz-body>
         <hr />

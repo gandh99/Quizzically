@@ -7,6 +7,7 @@ import { QuizInformationComponent } from './components/quiz-information/quiz-inf
 import { QuizBodyComponent } from './components/quiz-body/quiz-body.component';
 import { QuizSaveComponent } from './components/quiz-save/quiz-save.component';
 import { DraftQuizItemComponent } from './components/draft-quiz-item/draft-quiz-item.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { DraftQuizItemComponent } from './components/draft-quiz-item/draft-quiz-
   imports: [
     CommonModule,
     IconsModule,
-    MaterialUIModule
+    MaterialUIModule,
+    FormsModule
   ],
   exports: [
     CreateQuizMainComponent
