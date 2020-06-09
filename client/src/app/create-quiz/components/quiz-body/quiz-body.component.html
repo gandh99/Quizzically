@@ -4,6 +4,6 @@
     <div class="title"><b>Step 2:</b> Add some quiz questions</div>
 </header>
 <main *ngIf='showBody'>
-    <app-draft-quiz-item></app-draft-quiz-item>
+    <app-draft-quiz-item *ngFor='let item of draftQuizItems'></app-draft-quiz-item>
     <button class="button" (click)='addQuizItem()'>Add Quiz Item</button>
 </main>

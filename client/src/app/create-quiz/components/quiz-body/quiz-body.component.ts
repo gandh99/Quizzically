@@ -8,7 +8,7 @@ import { DraftQuizItem } from '../../models/draft-quiz-item';
 })
 export class QuizBodyComponent implements OnInit {
   showBody: boolean
-  draftQuizItems: DraftQuizItem[]
+  draftQuizItems: DraftQuizItem[] = []
 
   constructor() { }
 
@@ -21,7 +21,11 @@ export class QuizBodyComponent implements OnInit {
   }
 
   addQuizItem() {
-    
+    this.draftQuizItems.push({
+      question: '',
+      options: null,
+      correctOption: null
+    })
   }
 
 }
