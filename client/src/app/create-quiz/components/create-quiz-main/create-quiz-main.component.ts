@@ -33,6 +33,16 @@ export class CreateQuizMainComponent implements OnInit {
       this.customSnackBar.openSnackBar('Please fill in all the quiz information.', SnackBarType.ERROR)
       return
     }
+
+    if (!this.createQuizValidator.hasQuizItems(this.quizItems)) {
+      this.customSnackBar.openSnackBar('Please add at least 1 quiz item.', SnackBarType.ERROR)
+      return
+    }
+
+    if (!this.createQuizValidator.isValidQuizItems(this.quizItems)) {
+      this.customSnackBar.openSnackBar('Please fill in all quiz questions and options, and select at least 1 option per question.', SnackBarType.ERROR)
+      return
+    }
   }
 
 }
