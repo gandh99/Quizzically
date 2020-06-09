@@ -10,9 +10,8 @@ import { RadioOption } from 'src/app/quiz/models/radio-option';
 export class DraftQuizItemComponent implements OnInit {
   @Input() draftQuizItem: DraftQuizItem
   @Output() deleteDraftQuizItem = new EventEmitter<DraftQuizItem>()
+  @Output() setItem = new EventEmitter<DraftQuizItem>()
   showBody: boolean
-  quizQuestion: string
-  quizOptions: RadioOption[] = []
   quizOptionId: number
 
   constructor() { }
@@ -26,23 +25,37 @@ export class DraftQuizItemComponent implements OnInit {
   }
 
   setQuizQuestion(question: string) {
-    this.quizQuestion = question
+    this.draftQuizItem.question = question
+    this.setDraftQuizItem()
   }
 
   addOption() {
-    this.quizOptions.push({
+    this.draftQuizItem.options.push({
       id: this.quizOptionId++,
       text: '',
       selected: false
     })
+    this.setDraftQuizItem()
+  }
+
+  updateOption(option: RadioOption) {
+    this.draftQuizItem.options = this.draftQuizItem.options.map(o => {
+      return o.id === option.id ? option : o
+    })
+    this.setDraftQuizItem()
   }
 
   deleteOption(option: RadioOption) {
-    this.quizOptions = this.quizOptions.filter(o => o.id !== option.id)
+    this.draftQuizItem.options = this.draftQuizItem.options.filter(o => o.id !== option.id)
+    this.setDraftQuizItem()
   }
 
   deleteItem() {
     this.deleteDraftQuizItem.emit(this.draftQuizItem)
+  }
+
+  setDraftQuizItem() {
+    this.setItem.emit(this.draftQuizItem)
   }
 
 }

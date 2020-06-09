@@ -4,5 +4,4 @@ export interface DraftQuizItem {
     id: number,
     question: string,
     options: RadioOption[]
-    correctOption: RadioOption
 }

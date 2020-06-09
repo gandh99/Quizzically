@@ -27,25 +27,24 @@ export class QuizBodyComponent implements OnInit {
     this.draftQuizItems.push({
       id: this.draftQuizItemId++,
       question: '',
-      options: null,
-      correctOption: null
+      options: [],
     })
-    this.setQuizItem()
+    this.setQuizItems()
   }
 
   updateQuizItem(item: DraftQuizItem) {
     this.draftQuizItems = this.draftQuizItems.map(quizItem => {
       return item.id === quizItem.id ? item : quizItem
     })
-    this.setQuizItem()
+    this.setQuizItems()
   }
 
   deleteQuizItem(item: DraftQuizItem) {
     this.draftQuizItems = this.draftQuizItems.filter(quizItem => quizItem.id !== item.id)
-    this.setQuizItem()
+    this.setQuizItems()
   }
 
-  setQuizItem() {
+  setQuizItems() {
     this.quizItems.emit(this.draftQuizItems)
   }
 
