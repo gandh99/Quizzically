@@ -37,6 +37,10 @@ export class DraftQuizItemComponent implements OnInit {
     })
   }
 
+  deleteOption(option: RadioOption) {
+    this.quizOptions = this.quizOptions.filter(o => o.id !== option.id)
+  }
+
   deleteItem() {
     this.deleteDraftQuizItem.emit(this.draftQuizItem)
   }
