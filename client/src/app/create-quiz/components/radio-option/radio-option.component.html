@@ -1,5 +1,7 @@
 <div class="quiz-option">
-    <div class="check-icon"></div>
+    <div (click)='selectRadioOption()' class="check-circle" [ngClass]="{'selected': option.selected}">
+        <i-feather class="check-icon" name='check'></i-feather>
+    </div>
     <input class="input quiz-option-input" type="text" placeholder="Option" />
     <i-feather (click)='deleteRadioOption()' class="icon close-icon" name='x'></i-feather>
 </div>

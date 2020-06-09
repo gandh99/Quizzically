@@ -9,10 +9,17 @@ import { RadioOption } from 'src/app/quiz/models/radio-option';
 export class RadioOptionComponent implements OnInit {
   @Input() option: RadioOption
   @Output() deleteOption = new EventEmitter<RadioOption>()
+  isSelected: boolean
 
   constructor() { }
 
   ngOnInit(): void {
+    this.isSelected = this.option.selected
+  }
+
+  selectRadioOption() {
+    this.option.selected = !this.option.selected
+    this.isSelected = !this.isSelected
   }
 
   deleteRadioOption() {
