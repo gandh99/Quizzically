@@ -6,7 +6,7 @@
         <i-feather (click)='addOption()' class="icon plus-icon" name='plus'></i-feather>
         <i-feather (click)='deleteItem()' class="icon close-icon" name='x'></i-feather>
     </header>
-    <main>
+    <main *ngIf='showBody'>
         <radio-option *ngFor='let option of draftQuizItem.options' [option]='option' (setOption)='updateOption($event)'
             (deleteOption)='deleteOption($event)'>
         </radio-option>

@@ -18,6 +18,7 @@ export class DraftQuizItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.quizOptionId = 0
+    this.showBody = true
   }
 
   toggleShowBody() {
