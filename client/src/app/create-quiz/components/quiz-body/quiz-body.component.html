@@ -4,7 +4,7 @@
     <div class="title"><b>Step 2:</b> Add some quiz questions</div>
 </header>
 <main *ngIf='showBody'>
-    <draft-quiz-item *ngFor='let item of draftQuizItems' [draftQuizItem]='item' (setItem)='updateQuizItem($event)'
-        (deleteDraftQuizItem)='deleteQuizItem($event)'></draft-quiz-item>
+    <draft-quiz-item *ngFor='let item of quizItems' [quizItem]='item'
+        (deleteQuizItemChange)='deleteQuizItem($event)'></draft-quiz-item>
     <button class="button" (click)='addQuizItem()'>Add Quiz Item</button>
 </main>

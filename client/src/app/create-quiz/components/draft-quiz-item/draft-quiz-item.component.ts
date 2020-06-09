@@ -8,8 +8,8 @@ import { RadioOption } from 'src/app/quiz/models/radio-option';
   styleUrls: ['./draft-quiz-item.component.scss']
 })
 export class DraftQuizItemComponent implements OnInit {
-  @Input() draftQuizItem: DraftQuizItem
-  @Output() deleteDraftQuizItem = new EventEmitter<DraftQuizItem>()
+  @Input() quizItem: DraftQuizItem
+  @Output() deleteQuizItemChange = new EventEmitter<DraftQuizItem>()
   @Output() setItem = new EventEmitter<DraftQuizItem>()
   showBody: boolean
   quizOptionId: number
@@ -26,12 +26,12 @@ export class DraftQuizItemComponent implements OnInit {
   }
 
   setQuizQuestion(question: string) {
-    this.draftQuizItem.question = question
+    this.quizItem.question = question
     this.setDraftQuizItem()
   }
 
   addOption() {
-    this.draftQuizItem.options.push({
+    this.quizItem.options.push({
       id: this.quizOptionId++,
       text: '',
       selected: false
@@ -40,23 +40,23 @@ export class DraftQuizItemComponent implements OnInit {
   }
 
   updateOption(option: RadioOption) {
-    this.draftQuizItem.options = this.draftQuizItem.options.map(o => {
+    this.quizItem.options = this.quizItem.options.map(o => {
       return o.id === option.id ? option : o
     })
     this.setDraftQuizItem()
   }
 
   deleteOption(option: RadioOption) {
-    this.draftQuizItem.options = this.draftQuizItem.options.filter(o => o.id !== option.id)
+    this.quizItem.options = this.quizItem.options.filter(o => o.id !== option.id)
     this.setDraftQuizItem()
   }
 
   deleteItem() {
-    this.deleteDraftQuizItem.emit(this.draftQuizItem)
+    this.deleteQuizItemChange.emit(this.quizItem)
   }
 
   setDraftQuizItem() {
-    this.setItem.emit(this.draftQuizItem)
+    this.setItem.emit(this.quizItem)
   }
 
 }

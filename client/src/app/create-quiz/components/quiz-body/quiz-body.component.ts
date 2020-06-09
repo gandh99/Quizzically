@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DraftQuizItem } from '../../models/draft-quiz-item';
 
 @Component({
@@ -7,9 +7,9 @@ import { DraftQuizItem } from '../../models/draft-quiz-item';
   styleUrls: ['./quiz-body.component.scss']
 })
 export class QuizBodyComponent implements OnInit {
-  @Output() quizItems = new EventEmitter<DraftQuizItem[]>()
+  @Input() quizItems: DraftQuizItem[]
+  @Output() quizItemsChange = new EventEmitter<DraftQuizItem[]>()
   showBody: boolean
-  draftQuizItems: DraftQuizItem[] = []
   draftQuizItemId: number
 
   constructor() { }
@@ -24,28 +24,28 @@ export class QuizBodyComponent implements OnInit {
   }
 
   addQuizItem() {
-    this.draftQuizItems.push({
+    this.quizItems.push({
       id: this.draftQuizItemId++,
       question: '',
       options: [],
     })
-    this.setQuizItems()
+    this.onQuizItemsChange()
   }
 
   updateQuizItem(item: DraftQuizItem) {
-    this.draftQuizItems = this.draftQuizItems.map(quizItem => {
-      return item.id === quizItem.id ? item : quizItem
-    })
-    this.setQuizItems()
+    // this.draftQuizItems = this.draftQuizItems.map(quizItem => {
+    //   return item.id === quizItem.id ? item : quizItem
+    // })
+    // this.setQuizItems()
   }
 
   deleteQuizItem(item: DraftQuizItem) {
-    this.draftQuizItems = this.draftQuizItems.filter(quizItem => quizItem.id !== item.id)
-    this.setQuizItems()
+    this.quizItems = this.quizItems.filter(quizItem => quizItem.id !== item.id)
+    this.onQuizItemsChange()
   }
 
-  setQuizItems() {
-    this.quizItems.emit(this.draftQuizItems)
+  onQuizItemsChange() {
+    this.quizItemsChange.emit(this.quizItems)
   }
 
 }

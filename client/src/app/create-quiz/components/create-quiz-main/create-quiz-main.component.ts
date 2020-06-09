@@ -10,7 +10,7 @@ import { DraftQuizItem } from '../../models/draft-quiz-item';
 export class CreateQuizMainComponent implements OnInit {
   @Output() createQuiz = new EventEmitter<boolean>()
   quizInformation: QuizInformation
-  draftQuizItems: DraftQuizItem[] = []
+  quizItems: DraftQuizItem[] = []
   
   constructor() { }
 
@@ -23,10 +23,6 @@ export class CreateQuizMainComponent implements OnInit {
 
   loadCreateQuiz(load: boolean) {
     this.createQuiz.emit(load)
-  }
-
-  setQuizItems(draftQuizItems: DraftQuizItem[]) {
-    this.draftQuizItems = draftQuizItems
   }
 
   saveQuiz() {

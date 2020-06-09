@@ -8,8 +8,8 @@
     <main>
         <quiz-information [(quizInformation)]='quizInformation'></quiz-information>
         <hr />
-        <quiz-body (quizItems)='setQuizItems($event)'></quiz-body>
+        <quiz-body [(quizItems)]='quizItems'></quiz-body>
         <hr />
-        <quiz-save (save)='saveQuiz($event)'></quiz-save>
+        <quiz-save (save)='saveQuiz()'></quiz-save>
     </main>
 </div>
