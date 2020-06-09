@@ -17,8 +17,8 @@ export class DraftQuizItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.quizOptionId = 0
     this.showBody = true
+    this.quizOptionId = 0
   }
 
   toggleShowBody() {
@@ -27,7 +27,7 @@ export class DraftQuizItemComponent implements OnInit {
 
   setQuizQuestion(question: string) {
     this.quizItem.question = question
-    this.setDraftQuizItem()
+    this.onQuizItemChange()
   }
 
   addOption() {
@@ -36,26 +36,26 @@ export class DraftQuizItemComponent implements OnInit {
       text: '',
       selected: false
     })
-    this.setDraftQuizItem()
+    this.onQuizItemChange()
   }
 
   updateOption(option: RadioOption) {
     this.quizItem.options = this.quizItem.options.map(o => {
       return o.id === option.id ? option : o
     })
-    this.setDraftQuizItem()
+    this.onQuizItemChange()
   }
 
   deleteOption(option: RadioOption) {
     this.quizItem.options = this.quizItem.options.filter(o => o.id !== option.id)
-    this.setDraftQuizItem()
+    this.onQuizItemChange()
   }
 
   deleteItem() {
     this.deleteQuizItemChange.emit(this.quizItem)
   }
 
-  setDraftQuizItem() {
+  onQuizItemChange() {
     this.updateQuizItemChange.emit(this.quizItem)
   }
 
