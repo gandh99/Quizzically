@@ -15,18 +15,21 @@ export class CreateQuizMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.quizInformation = {
+      title: '',
+      description: ''
+    }
   }
 
   loadCreateQuiz(load: boolean) {
     this.createQuiz.emit(load)
   }
 
-  setQuizInformation(quizInformation: QuizInformation) {
-    this.quizInformation = quizInformation
-  }
-
   setQuizItems(draftQuizItems: DraftQuizItem[]) {
     this.draftQuizItems = draftQuizItems
+  }
+
+  saveQuiz() {
   }
 
 }

@@ -6,10 +6,10 @@
         <div class="title">Create Quiz</div>
     </header>
     <main>
-        <quiz-information (quizInformation)='setQuizInformation($event)'></quiz-information>
+        <quiz-information [(quizInformation)]='quizInformation'></quiz-information>
         <hr />
         <quiz-body (quizItems)='setQuizItems($event)'></quiz-body>
         <hr />
-        <quiz-save (save)='loadCreateQuiz(false)'></quiz-save>
+        <quiz-save (save)='saveQuiz($event)'></quiz-save>
     </main>
 </div>
