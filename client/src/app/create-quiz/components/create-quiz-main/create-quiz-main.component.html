@@ -10,6 +10,6 @@
         <hr />
         <quiz-body (quizItems)='setQuizItems($event)'></quiz-body>
         <hr />
-        <quiz-save></quiz-save>
+        <quiz-save (save)='loadCreateQuiz(false)'></quiz-save>
     </main>
 </div>

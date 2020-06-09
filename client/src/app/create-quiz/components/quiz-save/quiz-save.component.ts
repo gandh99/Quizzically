@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'quiz-save',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-save.component.scss']
 })
 export class QuizSaveComponent implements OnInit {
+  @Output() save = new EventEmitter<any>()
   showBody: boolean
 
   constructor() { }
@@ -16,6 +17,10 @@ export class QuizSaveComponent implements OnInit {
 
   toggleShowBody() {
     this.showBody = !this.showBody
+  }
+
+  saveQuiz() {
+    this.save.emit()
   }
 
 }
