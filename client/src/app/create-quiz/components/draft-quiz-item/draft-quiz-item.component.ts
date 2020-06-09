@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DraftQuizItem } from '../../models/draft-quiz-item';
 
 @Component({
-  selector: 'app-draft-quiz-item',
+  selector: 'draft-quiz-item',
   templateUrl: './draft-quiz-item.component.html',
   styleUrls: ['./draft-quiz-item.component.scss']
 })
 export class DraftQuizItemComponent implements OnInit {
+  @Input() draftQuizItem: DraftQuizItem
+  @Output() deleteDraftQuizItem = new EventEmitter<DraftQuizItem>()
   showBody: boolean
 
   constructor() { }
@@ -15,6 +18,10 @@ export class DraftQuizItemComponent implements OnInit {
 
   toggleShowBody() {
     this.showBody = !this.showBody
+  }
+
+  deleteItem() {
+    this.deleteDraftQuizItem.emit(this.draftQuizItem)
   }
 
 }

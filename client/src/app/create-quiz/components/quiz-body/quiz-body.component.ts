@@ -9,11 +9,13 @@ import { DraftQuizItem } from '../../models/draft-quiz-item';
 export class QuizBodyComponent implements OnInit {
   showBody: boolean
   draftQuizItems: DraftQuizItem[] = []
+  draftQuizItemId: number
 
   constructor() { }
 
   ngOnInit(): void {
     this.showBody = true
+    this.draftQuizItemId = 0
   }
 
   toggleShowBody() {
@@ -22,10 +24,15 @@ export class QuizBodyComponent implements OnInit {
 
   addQuizItem() {
     this.draftQuizItems.push({
+      id: this.draftQuizItemId++,
       question: '',
       options: null,
       correctOption: null
     })
+  }
+
+  deleteQuizItem(item: DraftQuizItem) {
+    this.draftQuizItems = this.draftQuizItems.filter(quizItem => quizItem.id !== item.id)
   }
 
 }
