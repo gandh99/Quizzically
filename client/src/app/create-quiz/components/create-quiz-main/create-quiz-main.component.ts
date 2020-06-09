@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { QuizInformation } from '../../models/quiz-information';
+import { DraftQuizItem } from '../../models/draft-quiz-item';
 
 @Component({
   selector: 'app-create-quiz-main',
@@ -9,6 +10,7 @@ import { QuizInformation } from '../../models/quiz-information';
 export class CreateQuizMainComponent implements OnInit {
   @Output() createQuiz = new EventEmitter<boolean>()
   quizInformation: QuizInformation
+  draftQuizItems: DraftQuizItem[] = []
   
   constructor() { }
 
@@ -21,6 +23,10 @@ export class CreateQuizMainComponent implements OnInit {
 
   setQuizInformation(quizInformation: QuizInformation) {
     this.quizInformation = quizInformation
+  }
+
+  setQuizItems(draftQuizItems: DraftQuizItem[]) {
+    this.draftQuizItems = draftQuizItems
   }
 
 }

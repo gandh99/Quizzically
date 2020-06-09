@@ -6,10 +6,10 @@
         <div class="title">Create Quiz</div>
     </header>
     <main>
-        <app-quiz-information (quizInformation)='setQuizInformation($event)'></app-quiz-information>
+        <quiz-information (quizInformation)='setQuizInformation($event)'></quiz-information>
         <hr />
-        <app-quiz-body></app-quiz-body>
+        <quiz-body (quizItems)='setQuizItems($event)'></quiz-body>
         <hr />
-        <app-quiz-save></app-quiz-save>
+        <quiz-save></quiz-save>
     </main>
 </div>

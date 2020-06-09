@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-quiz-save',
+  selector: 'quiz-save',
   templateUrl: './quiz-save.component.html',
   styleUrls: ['./quiz-save.component.scss']
 })

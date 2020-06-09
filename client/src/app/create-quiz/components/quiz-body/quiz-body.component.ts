@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DraftQuizItem } from '../../models/draft-quiz-item';
 
 @Component({
-  selector: 'app-quiz-body',
+  selector: 'quiz-body',
   templateUrl: './quiz-body.component.html',
   styleUrls: ['./quiz-body.component.scss']
 })
 export class QuizBodyComponent implements OnInit {
+  @Output() quizItems = new EventEmitter<DraftQuizItem[]>()
   showBody: boolean
   draftQuizItems: DraftQuizItem[] = []
   draftQuizItemId: number
@@ -29,10 +30,23 @@ export class QuizBodyComponent implements OnInit {
       options: null,
       correctOption: null
     })
+    this.setQuizItem()
+  }
+
+  updateQuizItem(item: DraftQuizItem) {
+    this.draftQuizItems = this.draftQuizItems.map(quizItem => {
+      return item.id === quizItem.id ? item : quizItem
+    })
+    this.setQuizItem()
   }
 
   deleteQuizItem(item: DraftQuizItem) {
     this.draftQuizItems = this.draftQuizItems.filter(quizItem => quizItem.id !== item.id)
+    this.setQuizItem()
+  }
+
+  setQuizItem() {
+    this.quizItems.emit(this.draftQuizItems)
   }
 
 }
