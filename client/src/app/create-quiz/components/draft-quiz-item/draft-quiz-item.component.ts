@@ -10,7 +10,7 @@ import { RadioOption } from 'src/app/quiz/models/radio-option';
 export class DraftQuizItemComponent implements OnInit {
   @Input() quizItem: DraftQuizItem
   @Output() deleteQuizItemChange = new EventEmitter<DraftQuizItem>()
-  @Output() setItem = new EventEmitter<DraftQuizItem>()
+  @Output() updateQuizItemChange = new EventEmitter<DraftQuizItem>()
   showBody: boolean
   quizOptionId: number
 
@@ -56,7 +56,7 @@ export class DraftQuizItemComponent implements OnInit {
   }
 
   setDraftQuizItem() {
-    this.setItem.emit(this.quizItem)
+    this.updateQuizItemChange.emit(this.quizItem)
   }
 
 }

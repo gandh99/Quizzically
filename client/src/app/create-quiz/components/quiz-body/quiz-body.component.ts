@@ -33,10 +33,10 @@ export class QuizBodyComponent implements OnInit {
   }
 
   updateQuizItem(item: DraftQuizItem) {
-    // this.draftQuizItems = this.draftQuizItems.map(quizItem => {
-    //   return item.id === quizItem.id ? item : quizItem
-    // })
-    // this.setQuizItems()
+    this.quizItems = this.quizItems.map(quizItem => {
+      return item.id === quizItem.id ? item : quizItem
+    })
+    this.onQuizItemsChange()
   }
 
   deleteQuizItem(item: DraftQuizItem) {
