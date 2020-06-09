@@ -46,3 +46,8 @@ hr {
     color: #dddddd;
     margin: 1rem 0.5rem;
 }
+
+::ng-deep .error {
+    background-color: styles.$error-color-background;
+    color: styles.$error-color-contrast-text;
+}

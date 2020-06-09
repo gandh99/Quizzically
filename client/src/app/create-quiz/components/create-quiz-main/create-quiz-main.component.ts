@@ -3,7 +3,7 @@ import { QuizInformation } from '../../models/quiz-information';
 import { DraftQuizItem } from '../../models/draft-quiz-item';
 import { CreateQuizValidatorService } from '../../services/create-quiz-validator.service';
 import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snackbar.service';
-import { SnackBarType } from 'src/app/material-ui/models/snackbar';
+import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
 
 @Component({
   selector: 'app-create-quiz-main',
@@ -31,6 +31,7 @@ export class CreateQuizMainComponent implements OnInit {
   saveQuiz() {
     if (!this.createQuizValidator.isValidQuizInformation(this.quizInformation)) {
       this.customSnackBar.openSnackBar('Please fill in all the quiz information.', SnackBarType.ERROR)
+      return
     }
   }
 

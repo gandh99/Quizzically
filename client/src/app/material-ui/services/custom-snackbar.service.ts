@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SnackBarType, getSnackBarClass } from '../models/snackbar'
+import { SnackBarType } from '../snackbar/snackbar'
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,10 @@ export class CustomSnackbarService {
   constructor(private snackBar: MatSnackBar) { }
 
   openSnackBar(message: string, status: SnackBarType, action?: string) {
+    let snackBarClass = SnackBarType[status].toLowerCase()
     this.snackBar.open(message, action, {
-      duration: 5000,
-      panelClass: [getSnackBarClass(status)]
+      duration: 3000,
+      panelClass: [snackBarClass]
     });
   }
 
