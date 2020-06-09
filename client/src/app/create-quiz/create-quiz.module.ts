@@ -8,11 +8,12 @@ import { QuizBodyComponent } from './components/quiz-body/quiz-body.component';
 import { QuizSaveComponent } from './components/quiz-save/quiz-save.component';
 import { DraftQuizItemComponent } from './components/draft-quiz-item/draft-quiz-item.component';
 import { FormsModule } from '@angular/forms';
+import { RadioOptionComponent } from './components/radio-option/radio-option.component';
 
 
 
 @NgModule({
-  declarations: [CreateQuizMainComponent, QuizInformationComponent, QuizBodyComponent, QuizSaveComponent, DraftQuizItemComponent],
+  declarations: [CreateQuizMainComponent, QuizInformationComponent, QuizBodyComponent, QuizSaveComponent, DraftQuizItemComponent, RadioOptionComponent],
   imports: [
     CommonModule,
     IconsModule,

@@ -2,25 +2,11 @@
     <header>
         <i-feather *ngIf='!showBody' class="icon" name='chevron-right' (click)='toggleShowBody()'></i-feather>
         <i-feather *ngIf='showBody' class="icon" name='chevron-down' (click)='toggleShowBody()'></i-feather>
-        <input class="input" type="text" placeholder="Quiz Title" />
-        <i-feather class="icon plus-icon" name='plus'></i-feather>
+        <input (input)='setQuizQuestion($event.target.value)' class="input" type="text" placeholder="Quiz Question" />
+        <i-feather (click)='addOption()' class="icon plus-icon" name='plus'></i-feather>
         <i-feather (click)='deleteItem()' class="icon close-icon" name='x'></i-feather>
     </header>
     <main>
-        <!-- <div class="quiz-option">
-            <div class="check-icon"></div>
-            <input class="input quiz-option-input" type="text" placeholder="Option" />
-            <i-feather class="icon close-icon" name='x'></i-feather>
-        </div>
-        <div class="quiz-option">
-            <div class="check-icon"></div>
-            <input class="input quiz-option-input" type="text" placeholder="Option" />
-            <i-feather class="icon close-icon" name='x'></i-feather>
-        </div>
-        <div class="quiz-option">
-            <div class="check-icon"></div>
-            <input class="input quiz-option-input" type="text" placeholder="Option" />
-            <i-feather class="icon close-icon" name='x'></i-feather>
-        </div> -->
+        <radio-option *ngFor='let option of quizOptions'></radio-option>
     </main>
 </div>
