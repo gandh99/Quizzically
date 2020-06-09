@@ -1,6 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { QuizInformation } from '../../models/quiz-information';
 import { DraftQuizItem } from '../../models/draft-quiz-item';
+import { CreateQuizValidatorService } from '../../services/create-quiz-validator.service';
+import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snackbar.service';
+import { SnackBarType } from 'src/app/material-ui/models/snackbar';
 
 @Component({
   selector: 'app-create-quiz-main',
@@ -11,8 +14,8 @@ export class CreateQuizMainComponent implements OnInit {
   @Output() createQuiz = new EventEmitter<boolean>()
   quizInformation: QuizInformation
   quizItems: DraftQuizItem[] = []
-  
-  constructor() { }
+
+  constructor(private createQuizValidator: CreateQuizValidatorService, private customSnackBar: CustomSnackbarService) { }
 
   ngOnInit(): void {
     this.quizInformation = {
@@ -26,6 +29,9 @@ export class CreateQuizMainComponent implements OnInit {
   }
 
   saveQuiz() {
+    if (!this.createQuizValidator.isValidQuizInformation(this.quizInformation)) {
+      this.customSnackBar.openSnackBar('Please fill in all the quiz information.', SnackBarType.ERROR)
+    }
   }
 
 }
