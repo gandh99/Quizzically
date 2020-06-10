@@ -5,11 +5,12 @@ import { IconsModule } from '../icons/icons.module';
 import { ReusableUiModule } from '../reusable-ui/reusable-ui.module';
 import { QuizStartComponent } from './components/quiz-start/quiz-start.component';
 import { QuizBodyComponent } from './components/quiz-body/quiz-body.component';
+import { QuizOptionComponent } from './components/quiz-option/quiz-option.component';
 
 
 
 @NgModule({
-  declarations: [TakeQuizMainComponent, QuizStartComponent, QuizBodyComponent],
+  declarations: [TakeQuizMainComponent, QuizStartComponent, QuizBodyComponent, QuizOptionComponent],
   imports: [
     CommonModule,
     IconsModule,
