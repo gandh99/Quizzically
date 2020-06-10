@@ -4,8 +4,8 @@
     <div class="title"><b>Step 1:</b> Fill in quiz information</div>
 </header>
 <main *ngIf='showBody'>
-    <input [(ngModel)]='quizInformation.title' (ngModelChange)='onQuizInformationChange()' class="input" type="text"
-        placeholder="Quiz Title" />
-    <input [(ngModel)]='quizInformation.description' (ngModelChange)='onQuizInformationChange()' class="input"
-        type="text" placeholder="Short Description" />
+    <text-input [(value)]='quizInformation.title' (valueChange)='onQuizInformationChange()'
+        [placeholder]="'Quiz Title'"></text-input>
+    <text-input [(value)]='quizInformation.description' (valueChange)='onQuizInformationChange()'
+        [placeholder]="'Quiz Description'"></text-input>
 </main>

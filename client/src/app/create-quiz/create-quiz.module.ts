@@ -9,6 +9,7 @@ import { QuizSaveComponent } from './components/quiz-save/quiz-save.component';
 import { DraftQuizItemComponent } from './components/draft-quiz-item/draft-quiz-item.component';
 import { FormsModule } from '@angular/forms';
 import { RadioOptionComponent } from './components/radio-option/radio-option.component';
+import { ReusableUiModule } from '../reusable-ui/reusable-ui.module';
 
 
 
@@ -18,7 +19,8 @@ import { RadioOptionComponent } from './components/radio-option/radio-option.com
     CommonModule,
     IconsModule,
     MaterialUIModule,
-    FormsModule
+    FormsModule,
+    ReusableUiModule
   ],
   exports: [
     CreateQuizMainComponent
