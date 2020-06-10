@@ -6,5 +6,5 @@
 <main *ngIf='showBody'>
     <draft-quiz-item *ngFor='let item of quizItems' [quizItem]='item' (updateQuizItemChange)='updateQuizItem($event)'
         (deleteQuizItemChange)='deleteQuizItem($event)'></draft-quiz-item>
-    <button class="button" (click)='addQuizItem()'>Add Quiz Item</button>
+    <custom-button (buttonClick)='addQuizItem()' [buttonText]='"Add Quiz Item"' [variant]='"primary"'></custom-button>
 </main>

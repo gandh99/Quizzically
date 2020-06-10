@@ -4,5 +4,5 @@
     <div class="title"><b>Step 3:</b> Save your quiz</div>
 </header>
 <main *ngIf='showBody'>
-    <button (click)='saveQuiz()' class="button">Save Quiz</button>
+    <custom-button (buttonClick)='saveQuiz()' [buttonText]='"Save Quiz"' [variant]='"secondary"'></custom-button>
 </main>

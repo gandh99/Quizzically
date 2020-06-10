@@ -1,0 +1,27 @@
+@use '../../../../styles.scss';
+
+.button {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: styles.$container-border-radius;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: styles.$primary-color-light;
+    color: styles.$primary-color-contrast-text;
+}
+
+.primary:hover {
+    background-color: styles.$primary-color-dark;
+}
+
+.secondary {
+    background-color: styles.$secondary-color-light;
+    color: styles.$secondary-color-contrast-text;
+}
+
+.secondary:hover {
+    background-color: styles.$secondary-color-dark;
+}
