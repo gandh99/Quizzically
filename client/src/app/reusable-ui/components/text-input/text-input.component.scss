@@ -8,3 +8,7 @@
     border: transparent;
     margin-bottom: 1rem;
 }
+
+.input:focus {
+    border: solid 2px lightblue;
+}
