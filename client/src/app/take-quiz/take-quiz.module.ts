@@ -4,11 +4,12 @@ import { TakeQuizMainComponent } from './components/take-quiz-main/take-quiz-mai
 import { IconsModule } from '../icons/icons.module';
 import { ReusableUiModule } from '../reusable-ui/reusable-ui.module';
 import { QuizStartComponent } from './components/quiz-start/quiz-start.component';
+import { QuizBodyComponent } from './components/quiz-body/quiz-body.component';
 
 
 
 @NgModule({
-  declarations: [TakeQuizMainComponent, QuizStartComponent],
+  declarations: [TakeQuizMainComponent, QuizStartComponent, QuizBodyComponent],
   imports: [
     CommonModule,
     IconsModule,
