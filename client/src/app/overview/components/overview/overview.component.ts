@@ -13,8 +13,4 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loadCreateQuiz(load: boolean) {
-    this.createQuiz.emit(load)
-  }
-
 }

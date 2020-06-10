@@ -7,6 +7,7 @@ import { OverviewModule } from '../overview/overview.module';
 import { ExploreModule } from '../explore/explore.module';
 import { AccountModule } from '../account/account.module';
 import { CreateQuizModule } from '../create-quiz/create-quiz.module';
+import { TakeQuizModule } from '../take-quiz/take-quiz.module';
 
 
 
@@ -18,7 +19,8 @@ import { CreateQuizModule } from '../create-quiz/create-quiz.module';
     OverviewModule,
     ExploreModule,
     AccountModule,
-    CreateQuizModule
+    CreateQuizModule,
+    TakeQuizModule
   ]
 })
 export class HomeModule { }

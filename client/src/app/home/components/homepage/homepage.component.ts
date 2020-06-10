@@ -10,7 +10,10 @@ export class HomepageComponent implements OnInit {
   PageDisplay = PageDisplay
   header: string
   currentPage: PageDisplay
+
+  // For the "pop-up" pages
   createQuiz: boolean
+  takeQuiz: boolean
 
   constructor() { }
 
@@ -18,6 +21,7 @@ export class HomepageComponent implements OnInit {
     this.currentPage = PageDisplay.OVERVIEW
     this.header = PageDisplay[this.currentPage]
     this.createQuiz = false
+    this.takeQuiz = false
   }
 
   changePage(page: PageDisplay) {
@@ -27,6 +31,10 @@ export class HomepageComponent implements OnInit {
 
   loadCreateQuiz(load: boolean) {
     this.createQuiz = load
+  }
+
+  loadTakeQuiz(load: boolean) {
+    this.takeQuiz = load
   }
 
 }

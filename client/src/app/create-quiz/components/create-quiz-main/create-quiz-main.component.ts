@@ -24,10 +24,6 @@ export class CreateQuizMainComponent implements OnInit {
     }
   }
 
-  loadCreateQuiz(load: boolean) {
-    this.createQuiz.emit(load)
-  }
-
   saveQuiz() {
     if (!this.createQuizValidator.isValidQuizInformation(this.quizInformation)) {
       this.customSnackBar.openSnackBar('Please fill in all the quiz information.', SnackBarType.ERROR)

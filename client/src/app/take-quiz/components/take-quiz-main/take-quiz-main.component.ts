@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-explore',
-  templateUrl: './explore.component.html',
-  styleUrls: ['./explore.component.scss']
+  selector: 'app-take-quiz-main',
+  templateUrl: './take-quiz-main.component.html',
+  styleUrls: ['./take-quiz-main.component.scss']
 })
-export class ExploreComponent implements OnInit {
+export class TakeQuizMainComponent implements OnInit {
   @Output() takeQuiz = new EventEmitter<boolean>()
 
   constructor() { }

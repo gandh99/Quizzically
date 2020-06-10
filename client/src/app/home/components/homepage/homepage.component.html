@@ -1,5 +1,6 @@
 <div class="background"></div>
-<app-create-quiz-main *ngIf='createQuiz === true' (createQuiz)='loadCreateQuiz($event)'></app-create-quiz-main>
+<app-create-quiz-main *ngIf='createQuiz' (createQuiz)='loadCreateQuiz($event)'></app-create-quiz-main>
+<app-take-quiz-main *ngIf='takeQuiz' (takeQuiz)='loadTakeQuiz($event)'></app-take-quiz-main>
 <header>
     <div class="title">{{ header | titlecase }}</div>
     <div class="settings">
@@ -8,7 +9,7 @@
 </header>
 <main>
     <app-overview *ngIf='currentPage === PageDisplay.OVERVIEW' (createQuiz)='loadCreateQuiz($event)'></app-overview>
-    <app-explore *ngIf='currentPage === PageDisplay.EXPLORE'></app-explore>
+    <app-explore *ngIf='currentPage === PageDisplay.EXPLORE' (takeQuiz)='loadTakeQuiz($event)'></app-explore>
     <app-account *ngIf='currentPage === PageDisplay.ACCOUNT'></app-account>
 </main>
 <footer>
