@@ -3,7 +3,6 @@
     <app-quiz-overview-card></app-quiz-overview-card>
     <app-quiz-overview-card></app-quiz-overview-card>
     <app-quiz-overview-card></app-quiz-overview-card>
-    <div class="add-button" (click)='loadCreateQuiz(true)'>
-        <i-feather class="add-icon" name='plus'></i-feather>
-    </div>
+    <custom-floating-action-button (buttonClick)='loadCreateQuiz(true)' [iconName]='"plus"'>
+    </custom-floating-action-button>
 </div>
