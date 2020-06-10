@@ -5,6 +5,12 @@
     grid-template-columns: 1fr;
 }
 
+.fab-icon {
+    position: fixed;
+    bottom: 3.5rem;
+    right: 1.5rem;
+}
+
 @media (min-width: styles.$m-size) {
     .container {
         grid-template-columns: 1fr 1fr;
