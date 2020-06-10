@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
 import { FloatingActionButtonComponent } from './components/floating-action-button/floating-action-button.component';
 import { IconsModule } from '../icons/icons.module';
+import { CardComponent } from './components/card/card.component';
 
 
 
 @NgModule({
-  declarations: [TextInputComponent, ButtonComponent, FloatingActionButtonComponent],
+  declarations: [TextInputComponent, ButtonComponent, FloatingActionButtonComponent, CardComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,7 +19,8 @@ import { IconsModule } from '../icons/icons.module';
   exports: [
     TextInputComponent,
     ButtonComponent,
-    FloatingActionButtonComponent
+    FloatingActionButtonComponent,
+    CardComponent
   ]
 })
 export class ReusableUiModule { }
