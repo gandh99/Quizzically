@@ -6,11 +6,12 @@ import { ButtonComponent } from './components/button/button.component';
 import { FloatingActionButtonComponent } from './components/floating-action-button/floating-action-button.component';
 import { IconsModule } from '../icons/icons.module';
 import { CardComponent } from './components/card/card.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 
 @NgModule({
-  declarations: [TextInputComponent, ButtonComponent, FloatingActionButtonComponent, CardComponent],
+  declarations: [TextInputComponent, ButtonComponent, FloatingActionButtonComponent, CardComponent, SearchBarComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,7 +21,8 @@ import { CardComponent } from './components/card/card.component';
     TextInputComponent,
     ButtonComponent,
     FloatingActionButtonComponent,
-    CardComponent
+    CardComponent,
+    SearchBarComponent
   ]
 })
 export class ReusableUiModule { }

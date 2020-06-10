@@ -1,0 +1,29 @@
+@use '../../../../styles.scss';
+
+.search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    border: transparent;
+    border-radius: styles.$container-border-radius;
+    
+}
+
+.search-input:focus {
+    border: solid 2px lightblue;
+}
+
+.search-icon {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+    width: 1.5rem;
+    color: styles.$primary-color-light;
+    cursor: pointer;
+}

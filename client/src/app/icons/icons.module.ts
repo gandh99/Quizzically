@@ -2,36 +2,38 @@ import { NgModule } from '@angular/core';
 
 import { FeatherModule } from 'angular-feather';
 import {
-  Check,
-  Codepen,
-  Home,
-  Globe,
-  User,
-  Settings,
-  Plus,
   Activity,
-  Heart,
   ArrowLeft,
-  ChevronRight,
+  Check,
   ChevronDown,
-  X
+  ChevronRight,
+  Codepen,
+  Globe,
+  Heart,
+  Home,
+  Plus,
+  Search,
+  Settings,
+  User,
+  X,
 } from 'angular-feather/icons';
 
 // Select some icons (use an object, not an array)
 const icons = {
-  Check,
-  Codepen,
-  Home,
-  Globe,
-  User,
-  Settings,
-  Plus,
   Activity,
-  Heart,
   ArrowLeft,
-  ChevronRight,
+  Check,
   ChevronDown,
-  X
+  ChevronRight,
+  Codepen,
+  Globe,
+  Heart,
+  Home,
+  Plus,
+  Search,
+  Settings,
+  User,
+  X,
 };
 
 @NgModule({
