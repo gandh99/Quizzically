@@ -1,0 +1,38 @@
+@use '../../../../styles.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.message {
+    text-transform: uppercase;
+    color: styles.$container-color-main-contrast-text;
+    font-size: 1.2rem;
+}
+
+.score-container {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+    .percentage-score {
+        font-size: 5rem;
+    }
+
+    .percent-sign {
+        font-size: 1rem;
+    }
+
+    .raw-score {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+}
+
+.button-container {
+    width: 50%;
+    margin: 0 auto;
+}
