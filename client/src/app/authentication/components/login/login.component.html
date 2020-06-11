@@ -1,8 +1,8 @@
 <div class="container">
     <form class="form">
-        <input class="textfield" type="text" placeholder="Username" />
-        <input class="textfield" type="password" placeholder="Password" />
-        <button class="button">Login</button>
+        <custom-text-input [placeholder]='"Username"'></custom-text-input>
+        <custom-text-input [placeholder]='"Password"' [type]='"password"'></custom-text-input>
+        <custom-button [variant]='"secondary"' [buttonText]='"LOGIN"'></custom-button>
     </form>
     <div class="message">
         Don't have an account? <span class="link" (click)='loadForm()'>Register now!</span>

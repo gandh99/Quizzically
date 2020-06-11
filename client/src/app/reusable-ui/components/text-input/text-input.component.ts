@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./text-input.component.scss']
 })
 export class TextInputComponent implements OnInit {
+  @Input() type: string
   @Input() placeholder: string
   @Input() value: string
   @Output() valueChange = new EventEmitter<string>()
