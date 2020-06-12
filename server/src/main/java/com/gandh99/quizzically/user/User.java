@@ -4,12 +4,8 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Table(name = "users")
 public class User {
 
@@ -26,4 +22,19 @@ public class User {
     this.createdAt = createdAt;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public String getUsername() {
+    return username;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public Date getCreatedAt() {
+    return createdAt;
+  }
 }
