@@ -1,0 +1,8 @@
+server:
+  port: 8000
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:6000/quizzically
+    username: gandh99
+    password: ENC(0Ipxp1+o+hpTVq6vDPsAwQ==)
+    pool-size: 30
