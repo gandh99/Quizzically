@@ -1,13 +1,13 @@
-package com.gandh99.quizically;
+package com.gandh99.quizzically;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QuizicallyApplication {
+public class QuizzicallyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QuizicallyApplication.class, args);
+		SpringApplication.run(QuizzicallyApplication.class, args);
 	}
 
 }
