@@ -1,27 +1,30 @@
-# Client
+# Quizzically
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+A web app to customise your own quiz and share them with your friends. Built with Angular and Java Spring.
 
-## Development server
+[Sounds cool? Try it out for yourself here!](https://myscribbler.herokuapp.com/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Technologies and Frameworks
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Front-end:
+  - Angular
+- Back-end:
+  - Java Spring Boot
+  - PostgreSQL
+  
+  
+## Screenshots
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Useful notes
 
-## Running unit tests
+1. Encrypting secrets in application.yml. The encrypted value for the secret can be generated using the following code.
+```
+java -cp ~/.m2/repository/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input=”Topsecret@123" password=dev-env-secret algorithm=PBEWITHMD5ANDDES
+```
+If the jasypt-1.9.2.jar executable is located somewhere else, fret not. Open your IDE and under the External Libraries folder locate the org.jasypt:jasypt:1.9.2 folder. Expand this folder, right click on the jasypt-1.9.2.jar file, and select "Directory Path". Use this directory path to execute the JAR file. For me, my JAR was located in /mnt/c/...
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Useful Links
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [Storing secrets in the application.yml file.](https://medium.com/@sun30nil/how-to-secure-secrets-and-passwords-in-springboot-90c952961d9)
