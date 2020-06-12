@@ -23,7 +23,7 @@ A web app to customise your own quiz and share them with your friends. Built wit
 ```
 java -cp ~/.m2/repository/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input=”Topsecret@123" password=dev-env-secret algorithm=PBEWITHMD5ANDDES
 ```
-If the jasypt-1.9.2.jar executable is located somewhere else, fret not. Open your IDE and under the External Libraries folder locate the org.jasypt:jasypt:1.9.2 folder. Expand this folder, right click on the jasypt-1.9.2.jar file, and select "Directory Path". Use this directory path to execute the JAR file. For me, my JAR was located in /mnt/c/...
+If the jasypt-1.9.2.jar executable is located somewhere else, fret not. Open your IDE and under the External Libraries folder locate the org.jasypt:jasypt:1.9.2 folder. Expand this folder, right click on the jasypt-1.9.2.jar file, and select "Directory Path". Use this directory path to execute the JAR file. For me, my JAR was located in /mnt/c/... . Use the encrypted output as the value in the application.yml file. Lastly, configure the Java VM as such: -Djasypt.encryptor.password=<secret>.
 
 ## Useful Links
 
