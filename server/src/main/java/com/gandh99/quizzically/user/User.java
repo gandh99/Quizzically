@@ -1,4 +1,4 @@
-package com.gandh99.quizzically.User;
+package com.gandh99.quizzically.user;
 
 import java.sql.Date;
 import javax.persistence.Entity;
@@ -8,9 +8,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
 @Getter
 @Setter
+@Table(name = "users")
 public class User {
 
   @Id

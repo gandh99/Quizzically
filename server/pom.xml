@@ -37,13 +37,6 @@
       </exclusions>
     </dependency>
 
-    <!--Jaspyt for encrypting values in the application.yml file-->
-    <dependency>
-      <groupId>com.github.ulisesbocchio</groupId>
-      <artifactId>jasypt-spring-boot-starter</artifactId>
-      <version>LATEST</version>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
     <dependency>
       <groupId>javax.validation</groupId>
@@ -75,7 +68,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.16</version>
+      <version>1.18.12</version>
     </dependency>
 
   </dependencies>
