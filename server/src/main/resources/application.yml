@@ -3,6 +3,6 @@ server:
 app:
   datasource:
     jdbc-url: jdbc:postgresql://localhost:6000/quizzically
-    username: gandh99
-    password: xxx
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     pool-size: 30
