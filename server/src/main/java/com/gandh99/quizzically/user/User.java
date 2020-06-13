@@ -1,33 +1,38 @@
 package com.gandh99.quizzically.user;
 
 import java.sql.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
 public class User {
+  @Column(name = "user_id")
+  private Integer userId;
 
-  @Id
-  private int id;
+  @Column(name = "username")
   private String username;
+
+  @Column(name = "password")
   private String password;
+
+  @Column(name = "created_at")
   private Date createdAt;
 
-  public User(int id, String username, String password, Date createdAt) {
-    this.id = id;
+  public User(int userId, String username, String password, Date createdAt) {
+    this.userId = userId;
     this.username = username;
     this.password = password;
     this.createdAt = createdAt;
   }
 
-  public int getId() {
-    return id;
+  public int getUserId() {
+    return userId;
   }
 
-  public void setId(int id) {
-    this.id = id;
+  public void setUserId(int userId) {
+    this.userId = userId;
   }
 
   public String getUsername() {
