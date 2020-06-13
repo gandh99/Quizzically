@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class User {
 
   @Id
-  private final int id;
-  private final String username;
-  private final String password;
-  private final Date createdAt;
+  private int id;
+  private String username;
+  private String password;
+  private Date createdAt;
 
   public User(int id, String username, String password, Date createdAt) {
     this.id = id;
@@ -26,15 +26,31 @@ public class User {
     return id;
   }
 
+  public void setId(int id) {
+    this.id = id;
+  }
+
   public String getUsername() {
     return username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
   }
 
   public String getPassword() {
     return password;
   }
 
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
   public Date getCreatedAt() {
     return createdAt;
+  }
+
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
   }
 }
