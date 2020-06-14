@@ -30,4 +30,9 @@ public class UserController {
   public Optional<User> selectUser(@RequestBody User user) {
     return userService.selectUser(user);
   }
+
+  @GetMapping(path = "/hello")
+  public String home() {
+    return "Hello!";
+  }
 }
