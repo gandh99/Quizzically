@@ -27,6 +27,7 @@ If the jasypt-1.9.2.jar executable is located somewhere else, fret not. Open you
 
 ## Useful Links
 
-- [Storing secrets in the application.yml file.](https://medium.com/@sun30nil/how-to-secure-secrets-and-passwords-in-springboot-90c952961d9)
+- [Spring Security with JWT](https://www.javainuse.com/spring/boot-jwt)
+- [Storing secrets in the application.yml file](https://medium.com/@sun30nil/how-to-secure-secrets-and-passwords-in-springboot-90c952961d9)
 - [How Spring Security Authentication Works](https://www.youtube.com/watch?v=caCJAJC41Rk)
 - [Quick guide to implementing Spring Security](https://www.marcobehler.com/guides/spring-security#_filterchain_security_configuration_dsl)
