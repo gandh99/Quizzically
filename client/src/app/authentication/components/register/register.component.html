@@ -1,8 +1,8 @@
 <div class="container">
     <form class="form">
-        <custom-text-input [placeholder]='"Username"'></custom-text-input>
-        <custom-text-input [placeholder]='"Password"' [type]='"password"'></custom-text-input>
-        <custom-button [variant]='"secondary"' [buttonText]='"REGISTER"'></custom-button>
+        <custom-text-input [(value)]='username' [placeholder]='"Username"'></custom-text-input>
+        <custom-text-input [(value)]='password' [placeholder]='"Password"' [type]='"password"'></custom-text-input>
+        <custom-button (buttonClick)='register()' [variant]='"secondary"' [buttonText]='"REGISTER"'></custom-button>
     </form>
     <div class="message">
         Already a member? <span class="link" (click)='loadForm()'>Login now!</span>

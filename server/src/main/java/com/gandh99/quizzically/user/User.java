@@ -21,6 +21,10 @@ public class User {
   @Column(name = "created_at")
   private Date createdAt;
 
+  public User() {
+    super();
+  }
+
   public User(String username, String password) {
     this.username = username;
     this.password = password;

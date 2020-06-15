@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticationForm } from '../../models/form';
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -8,14 +9,22 @@ import { AuthenticationForm } from '../../models/form';
 })
 export class RegisterComponent implements OnInit {
   @Output() form = new EventEmitter<AuthenticationForm>()
+  username: string = ''
+  password: string = ''
 
-  constructor() { }
+  constructor(private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
 
   loadForm() {
     this.form.emit(AuthenticationForm.LOGIN)
+  }
+
+  register() {
+    this.registerService.register(this.username, this.password).subscribe(response => {
+      console.log('done')
+    })
   }
 
 }
