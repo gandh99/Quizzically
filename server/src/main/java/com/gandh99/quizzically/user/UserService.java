@@ -22,7 +22,7 @@ public class UserService {
     userDao.insertUser(user);
   }
 
-  Optional<User> selectUser(User user) {
+  public Optional<User> selectUser(User user) {
     String plaintextPassword = user.getPassword();
     String hashedPassword = PasswordEncoder.hashPassword(plaintextPassword);
     user.setPassword(hashedPassword);
@@ -31,11 +31,14 @@ public class UserService {
     // Verify that password matches
     if (returnedUser.isPresent() &&
         PasswordEncoder.checkPassword(plaintextPassword, returnedUser.get().getPassword())) {
-      // Don't return the password
-      returnedUser.get().setPassword(null);
       return returnedUser;
     } else {
       return Optional.empty();
     }
   }
+
+  public Optional<User> selectUser(String username) {
+    return userDao.selectUser(username);
+  }
+
 }

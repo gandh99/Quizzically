@@ -24,18 +24,27 @@ public class UserDaoImpl implements UserDao {
 
   @Override
   public Optional<User> selectUser(User user) {
+    return selectUserFromUsername(user.getUsername());
+  }
+
+  @Override
+  public Optional<User> selectUser(String username) {
+    return selectUserFromUsername(username);
+  }
+
+  private Optional<User> selectUserFromUsername(String username) {
     final String sql = "SELECT * FROM users WHERE username = ?";
     User selectedUser;
 
     try {
       selectedUser = jdbcTemplate.queryForObject(
           sql,
-          new Object[]{user.getUsername()},
+          new Object[]{username},
           ((resultSet, i) -> {
             int userId = resultSet.getInt("user_id");
-            String username = resultSet.getString("username");
-            String password = resultSet.getString("password");
-            return new User(userId, username, password, null);
+            String usernameResult = resultSet.getString("username");
+            String passwordResult = resultSet.getString("password");
+            return new User(userId, usernameResult, passwordResult, null);
           })
       );
     } catch (EmptyResultDataAccessException emptyResultDataAccessException) {
@@ -44,4 +53,5 @@ public class UserDaoImpl implements UserDao {
 
     return Optional.ofNullable(selectedUser);
   }
+
 }

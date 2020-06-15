@@ -8,6 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
+
   @Column(name = "user_id")
   private Integer userId;
 
@@ -19,6 +20,11 @@ public class User {
 
   @Column(name = "created_at")
   private Date createdAt;
+
+  public User(String username, String password) {
+    this.username = username;
+    this.password = password;
+  }
 
   public User(int userId, String username, String password, Date createdAt) {
     this.userId = userId;

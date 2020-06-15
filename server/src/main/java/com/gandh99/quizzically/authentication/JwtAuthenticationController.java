@@ -1,5 +1,8 @@
 package com.gandh99.quizzically.authentication;
 
+import com.gandh99.quizzically.user.User;
+import com.gandh99.quizzically.user.UserService;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,6 +28,9 @@ public class JwtAuthenticationController {
   @Autowired
   private JwtUserDetailsService userDetailsService;
 
+  @Autowired
+  private UserService userService;
+
   @PostMapping(value = "/authenticate")
   public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
       throws Exception {
@@ -38,6 +44,12 @@ public class JwtAuthenticationController {
 
   private void authenticate(String username, String password) throws Exception {
     try {
+      // Attempt to retrieve user from db
+      Optional<User> user = userService.selectUser(new User(username, password));
+      if (user.isEmpty()) {
+        throw new BadCredentialsException("Invalid credentials");
+      }
+
       authenticationManager
           .authenticate(new UsernamePasswordAuthenticationToken(username, password));
     } catch (DisabledException e) {

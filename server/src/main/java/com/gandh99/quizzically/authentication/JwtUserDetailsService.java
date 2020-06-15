@@ -1,7 +1,10 @@
 package com.gandh99.quizzically.authentication;
 
+import com.gandh99.quizzically.user.UserService;
 import java.util.ArrayList;
 
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,11 +14,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
 
-  // TODO: Access database and retrieve user
+  @Autowired
+  private UserService userService;
+
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    if ("javainuse".equals(username)) {
-      return new User("javainuse", "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6",
+    Optional<com.gandh99.quizzically.user.User> user = userService.selectUser(username);
+
+    if (user.isPresent()) {
+      return new User(user.get().getUsername(), user.get().getPassword(),
           new ArrayList<>());
     } else {
       throw new UsernameNotFoundException("User not found with username: " + username);
