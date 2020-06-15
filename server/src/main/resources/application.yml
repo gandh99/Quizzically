@@ -1,0 +1,10 @@
+server:
+  port: 8000
+jwt:
+  secret: ${JWT_SECRET}
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:6000/quizzically
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    pool-size: 30
