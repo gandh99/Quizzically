@@ -24,13 +24,21 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.registerService.register(this.username, this.password).subscribe(response => {
-      if (response.status === 200) {
+    this.registerService.register(this.username, this.password).subscribe(
+      response => {
         this.customSnackbarService.openSnackBar('Registration successful.', SnackBarType.SUCCESS)
-      } else {
-        this.customSnackbarService.openSnackBar('Registration unsuccessful.', SnackBarType.ERROR)
+      },
+      error => {
+        switch (error.status) {
+          case 409:
+            this.customSnackbarService.openSnackBar('Username already exists.', SnackBarType.ERROR)
+            break
+          default:
+            this.customSnackbarService.openSnackBar('Registration unsuccessful.', SnackBarType.ERROR)
+            break
+        }
       }
-    })
+    )
   }
 
 }

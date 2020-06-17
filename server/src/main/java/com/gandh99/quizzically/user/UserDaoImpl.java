@@ -2,6 +2,7 @@ package com.gandh99.quizzically.user;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -17,9 +18,9 @@ public class UserDaoImpl implements UserDao {
   }
 
   @Override
-  public int insertUser(User user) {
+  public void insertUser(User user) throws DuplicateKeyException {
     final String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-    return jdbcTemplate.update(sql, user.getUsername(), user.getPassword());
+    jdbcTemplate.update(sql, user.getUsername(), user.getPassword());
   }
 
   @Override
