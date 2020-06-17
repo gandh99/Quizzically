@@ -27,6 +27,7 @@ public class UserController {
     userService.insertUser(user);
   }
 
+  // TODO: Remove
   @GetMapping(path = "/hello")
   public String home() {
     return "Hello!";

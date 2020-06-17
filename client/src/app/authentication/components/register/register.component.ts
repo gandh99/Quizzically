@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticationForm } from '../../models/form';
 import { RegisterService } from '../../services/register.service';
+import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snackbar.service';
+import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +14,7 @@ export class RegisterComponent implements OnInit {
   username: string = ''
   password: string = ''
 
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService, private customSnackbarService: CustomSnackbarService) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +25,11 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.registerService.register(this.username, this.password).subscribe(response => {
-      console.log('done')
+      if (response.status === 200) {
+        this.customSnackbarService.openSnackBar('Registration successful.', SnackBarType.SUCCESS)
+      } else {
+        this.customSnackbarService.openSnackBar('Registration unsuccessful.', SnackBarType.ERROR)
+      }
     })
   }
 
