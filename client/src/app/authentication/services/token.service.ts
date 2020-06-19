@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TokenService {
+
+  constructor() { }
+
+  getAccessToken() {
+    localStorage.getItem('accessToken')
+  }
+
+  setAccessToken(accessToken: string) {
+    localStorage.setItem('accessToken', accessToken)
+  }
+}

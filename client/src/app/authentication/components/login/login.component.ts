@@ -4,6 +4,7 @@ import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snackbar.service';
 import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,12 @@ export class LoginComponent implements OnInit {
   username: string = ''
   password: string = ''
 
-  constructor(private loginService: LoginService, private router: Router, private customSnackbarService: CustomSnackbarService) { }
+  constructor(
+    private loginService: LoginService,
+    private tokenService: TokenService,
+    private router: Router,
+    private customSnackbarService: CustomSnackbarService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -27,10 +33,8 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginService.login(this.username, this.password).subscribe(
       response => {
-        let token: string = response.body.token
-        if (token) {
-          localStorage.setItem('accessToken', token)
-        }
+        let accessToken: string = response.body.token
+        this.tokenService.setAccessToken(accessToken)
         this.router.navigateByUrl('/home')
       },
       error => {
