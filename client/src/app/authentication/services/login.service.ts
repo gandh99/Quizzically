@@ -13,11 +13,11 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LoginService {
-  url: string = 'http://localhost:8000/authenticate'
+  endpoint: string = '/authenticate'
 
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(this.url, { username, password }, httpOptions)
+    return this.http.post<any>(this.endpoint, { username, password }, httpOptions)
   }
 }
