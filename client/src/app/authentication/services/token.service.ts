@@ -14,4 +14,8 @@ export class TokenService {
   setAccessToken(accessToken: string) {
     localStorage.setItem('accessToken', accessToken)
   }
+
+  isAuthenticated(): boolean {
+    return localStorage.getItem('accessToken') !== null
+  }
 }
