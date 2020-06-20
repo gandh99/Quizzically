@@ -1,8 +1,11 @@
-package com.gandh99.quizzically.quiz;
+package com.gandh99.quizzically.quiz.quizOverview;
 
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +25,15 @@ public class QuizOverview {
 
   @Column(name = "created_at")
   private Date createdAt;
+
+//  @OneToMany
+//  @JoinTable(name = "quiz_questions", joinColumns = @JoinColumn(name = "quiz_overview_id"))
+//  private QuizQuestion[] quizQuestions;
+
+
+  public QuizOverview() {
+    super();
+  }
 
   public QuizOverview(Integer quizOverviewId, Integer ownerId, String title,
       String description, Date createdAt) {

@@ -2,6 +2,9 @@ package com.gandh99.quizzically.quiz;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +21,10 @@ public class QuizQuestion {
 
   @Column(name = "question")
   private String question;
+
+  @OneToMany
+  @JoinTable(name = "quiz_options", joinColumns = @JoinColumn(name = "quiz_question_id"))
+  private QuizOption[] quizOptions;
 
   public QuizQuestion(Integer quizQuestionId, Integer quizOverviewId,
       Integer questionNumber, String question) {
