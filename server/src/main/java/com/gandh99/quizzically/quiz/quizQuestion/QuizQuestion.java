@@ -1,13 +1,11 @@
 package com.gandh99.quizzically.quiz.quizQuestion;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gandh99.quizzically.quiz.QuizOption;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,19 +24,20 @@ public class QuizQuestion {
   @Column(name = "question")
   private String question;
 
-  @OneToMany
-  @JoinTable(name = "quiz_options", joinColumns = @JoinColumn(name = "quiz_question_id"))
-  private QuizOption[] quizOptions;
+  @JsonProperty("quizOption")
+  private List<QuizOption> quizOptionList;
 
   public QuizQuestion() {
   }
 
   public QuizQuestion(Integer quizQuestionId, Integer quizOverviewId,
-      Integer questionNumber, String question) {
+      Integer questionNumber, String question,
+      List<QuizOption> quizOptionList) {
     this.quizQuestionId = quizQuestionId;
     this.quizOverviewId = quizOverviewId;
     this.questionNumber = questionNumber;
     this.question = question;
+    this.quizOptionList = quizOptionList;
   }
 
   public Integer getQuizQuestionId() {
@@ -71,5 +70,13 @@ public class QuizQuestion {
 
   public void setQuestion(String question) {
     this.question = question;
+  }
+
+  public List<QuizOption> getQuizOptionList() {
+    return quizOptionList;
+  }
+
+  public void setQuizOptionList(List<QuizOption> quizOptionList) {
+    this.quizOptionList = quizOptionList;
   }
 }
