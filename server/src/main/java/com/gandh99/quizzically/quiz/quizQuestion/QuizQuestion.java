@@ -1,5 +1,6 @@
-package com.gandh99.quizzically.quiz;
+package com.gandh99.quizzically.quiz.quizQuestion;
 
+import com.gandh99.quizzically.quiz.QuizOption;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -25,6 +26,9 @@ public class QuizQuestion {
   @OneToMany
   @JoinTable(name = "quiz_options", joinColumns = @JoinColumn(name = "quiz_question_id"))
   private QuizOption[] quizOptions;
+
+  public QuizQuestion() {
+  }
 
   public QuizQuestion(Integer quizQuestionId, Integer quizOverviewId,
       Integer questionNumber, String question) {
