@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/")
 @RestController
-//@CrossOrigin("http://localhost:4200")
 public class UserController {
 
   private final UserService userService;
@@ -34,9 +33,4 @@ public class UserController {
     }
   }
 
-  // TODO: Remove
-  @GetMapping(path = "/hello")
-  public String home() {
-    return "Hello!";
-  }
 }
