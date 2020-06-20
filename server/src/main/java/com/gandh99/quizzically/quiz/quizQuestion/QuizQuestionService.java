@@ -13,8 +13,8 @@ public class QuizQuestionService {
     this.quizQuestionDao = quizQuestionDao;
   }
 
-  public void insertQuizQuestion(QuizQuestion quizQuestion) {
-    quizQuestionDao.insertQuizQuestion(quizQuestion);
+  public int insertQuizQuestion(QuizQuestion quizQuestion) {
+    return quizQuestionDao.insertQuizQuestion(quizQuestion);
   }
 
 }
