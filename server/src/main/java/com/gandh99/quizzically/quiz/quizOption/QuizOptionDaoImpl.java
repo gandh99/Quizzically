@@ -1,5 +1,7 @@
 package com.gandh99.quizzically.quiz.quizOption;
 
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -15,19 +17,17 @@ public class QuizOptionDaoImpl implements QuizOptionDao {
   @Override
   public void insertQuizOption(QuizOption quizOption) {
     GeneratedKeyHolder holder = new GeneratedKeyHolder();
-//    jdbcTemplate.update(con -> {
-//      PreparedStatement statement = con.prepareStatement(
-//          "INSERT INTO quiz_overview (owner_id, title, description) VALUES (?, ?, ?) ",
-//          Statement.RETURN_GENERATED_KEYS
-//      );
-//
-//      statement.setInt(1, 21);
-//      statement.setString(2, quizOverview.getTitle());
-//      statement.setString(3, quizOverview.getDescription());
-//      return statement;
-//    }, holder);
-//
-//    return (int) holder.getKeys().get("quiz_overview_id");
+    jdbcTemplate.update(con -> {
+      PreparedStatement statement = con.prepareStatement(
+          "INSERT INTO quiz_options (quiz_question_id, text, is_correct) VALUES (?, ?, ?) ",
+          Statement.RETURN_GENERATED_KEYS
+      );
+
+      statement.setInt(1, quizOption.getQuizQuestionId());
+      statement.setString(2, quizOption.getText());
+      statement.setBoolean(3, quizOption.getCorrect());
+      return statement;
+    }, holder);
   }
 
 }
