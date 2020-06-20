@@ -7,7 +7,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-@Repository("postgres")
+@Repository("users")
 public class UserDaoImpl implements UserDao {
 
   private final JdbcTemplate jdbcTemplate;

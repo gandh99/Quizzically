@@ -9,7 +9,7 @@ public class QuizOverviewService {
   private final QuizOverviewDao quizOverviewDao;
 
   @Autowired
-  public QuizOverviewService(@Qualifier("quizOverview") QuizOverviewDao quizOverviewDao) {
+  public QuizOverviewService(@Qualifier("quiz_overview") QuizOverviewDao quizOverviewDao) {
     this.quizOverviewDao = quizOverviewDao;
   }
 

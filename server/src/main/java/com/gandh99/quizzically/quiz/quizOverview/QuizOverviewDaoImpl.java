@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-@Repository("quizOverview")
+@Repository("quiz_overview")
 public class QuizOverviewDaoImpl implements QuizOverviewDao {
 
   private final JdbcTemplate jdbcTemplate;

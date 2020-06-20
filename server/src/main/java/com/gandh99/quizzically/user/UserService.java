@@ -12,7 +12,7 @@ public class UserService {
   private final UserDao userDao;
 
   @Autowired
-  public UserService(@Qualifier("postgres") UserDao userDao) {
+  public UserService(@Qualifier("users") UserDao userDao) {
     this.userDao = userDao;
   }
 
