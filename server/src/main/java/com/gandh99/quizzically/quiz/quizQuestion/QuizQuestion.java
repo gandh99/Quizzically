@@ -1,7 +1,7 @@
 package com.gandh99.quizzically.quiz.quizQuestion;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.gandh99.quizzically.quiz.QuizOption;
+import com.gandh99.quizzically.quiz.quizOption.QuizOption;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,9 +18,11 @@ public class QuizQuestion {
   @Column(name = "quiz_overview_id")
   private Integer quizOverviewId;
 
+  @JsonProperty("questionNumber")
   @Column(name = "question_number")
   private Integer questionNumber;
 
+  @JsonProperty("question")
   @Column(name = "question")
   private String question;
 

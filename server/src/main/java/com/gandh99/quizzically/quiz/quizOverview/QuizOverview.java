@@ -1,5 +1,6 @@
 package com.gandh99.quizzically.quiz.quizOverview;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,9 +17,11 @@ public class QuizOverview {
   @Column(name = "owner_id")
   private Integer ownerId;
 
+  @JsonProperty("title")
   @Column(name = "title")
   private String title;
 
+  @JsonProperty("description")
   @Column(name = "description")
   private String description;
 

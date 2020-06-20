@@ -1,5 +1,6 @@
 package com.gandh99.quizzically.quiz.quizOption;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,9 +16,11 @@ public class QuizOption {
   @Column(name = "quiz_question_id")
   private Integer quizQuestionId;
 
+  @JsonProperty("text")
   @Column(name = "text")
   private String text;
 
+  @JsonProperty("isCorrect")
   @Column(name = "is_correct")
   private Boolean isCorrect;
 

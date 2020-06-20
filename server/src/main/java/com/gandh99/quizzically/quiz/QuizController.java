@@ -1,11 +1,12 @@
 package com.gandh99.quizzically.quiz;
 
+import com.gandh99.quizzically.quiz.quizOption.QuizOption;
+import com.gandh99.quizzically.quiz.quizOption.QuizOptionService;
 import com.gandh99.quizzically.quiz.quizOverview.QuizOverview;
 import com.gandh99.quizzically.quiz.quizOverview.QuizOverviewService;
 import com.gandh99.quizzically.quiz.quizQuestion.QuizQuestion;
 import com.gandh99.quizzically.quiz.quizQuestion.QuizQuestionService;
 import java.util.List;
-import java.util.stream.Collectors;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,13 +23,16 @@ public class QuizController {
 
   private final QuizOverviewService quizOverviewService;
   private final QuizQuestionService quizQuestionService;
+  private final QuizOptionService quizOptionService;
 
   @Autowired
   public QuizController(
       QuizOverviewService quizOverviewService,
-      QuizQuestionService quizQuestionService) {
+      QuizQuestionService quizQuestionService,
+      QuizOptionService quizOptionService) {
     this.quizOverviewService = quizOverviewService;
     this.quizQuestionService = quizQuestionService;
+    this.quizOptionService = quizOptionService;
   }
 
   @PostMapping(path = "/insert")
@@ -38,10 +42,19 @@ public class QuizController {
       QuizOverview quizOverview = quizWrapper.getQuizOverview();
       int quizOverviewId = quizOverviewService.insertQuizOverview(quizOverview);
 
-      // Insert quiz questions
       List<QuizQuestion> quizQuestionList = quizWrapper.getQuizQuestion();
-      quizQuestionList.forEach(quizQuestion -> quizQuestion.setQuizOverviewId(quizOverviewId));
-      quizQuestionList.forEach(quizQuestionService::insertQuizQuestion);
+      quizQuestionList.forEach(quizQuestion -> {
+        // Insert quiz question
+        quizQuestion.setQuizOverviewId(quizOverviewId);
+        int quizQuestionId = quizQuestionService.insertQuizQuestion(quizQuestion);
+
+        // Insert quiz options
+        List<QuizOption> quizOptionList = quizQuestion.getQuizOptionList();
+        quizOptionList.forEach(quizOption -> {
+          quizOption.setQuizQuestionId(quizQuestionId);
+          quizOptionService.insertQuizOption(quizOption);
+        });
+      });
 
       return new ResponseEntity<>(HttpStatus.OK);
     } catch (Exception e) {
