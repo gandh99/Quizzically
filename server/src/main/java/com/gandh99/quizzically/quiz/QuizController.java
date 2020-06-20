@@ -27,7 +27,7 @@ public class QuizController {
   @PostMapping(path = "/insert")
   public ResponseEntity<String> insertQuiz(@Valid @NonNull @RequestBody QuizOverview quizOverview) {
     try {
-      quizOverviewService.insertQuizOverview(quizOverview);
+      int quizOverviewId = quizOverviewService.insertQuizOverview(quizOverview);
       return new ResponseEntity<>(HttpStatus.OK);
     } catch (Exception e) {
       e.printStackTrace();

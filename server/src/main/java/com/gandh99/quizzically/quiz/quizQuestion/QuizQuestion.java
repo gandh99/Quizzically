@@ -3,6 +3,8 @@ package com.gandh99.quizzically.quiz.quizQuestion;
 import com.gandh99.quizzically.quiz.QuizOption;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
@@ -11,6 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "quiz_questions")
 public class QuizQuestion {
+  @Id
   @Column(name = "quiz_question_id")
   private Integer quizQuestionId;
 

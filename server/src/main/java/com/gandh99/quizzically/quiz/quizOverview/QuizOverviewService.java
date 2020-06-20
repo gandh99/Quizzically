@@ -13,8 +13,8 @@ public class QuizOverviewService {
     this.quizOverviewDao = quizOverviewDao;
   }
 
-  public void insertQuizOverview(QuizOverview quizOverview) {
-    quizOverviewDao.insertQuizOverview(quizOverview);
+  public int insertQuizOverview(QuizOverview quizOverview) {
+    return quizOverviewDao.insertQuizOverview(quizOverview);
   }
 
 }
