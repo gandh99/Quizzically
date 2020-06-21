@@ -5,6 +5,7 @@ import { CreateQuizValidatorService } from '../../services/create-quiz-validator
 import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snackbar.service';
 import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
 import { QuizWrapper } from '../../models/quiz-wrapper';
+import { CreateQuizService } from '../../services/create-quiz.service';
 
 @Component({
   selector: 'app-create-quiz-main',
@@ -17,12 +18,20 @@ export class CreateQuizMainComponent implements OnInit {
   quizOverview: QuizOverview
   quizQuestions: QuizQuestion[] = []
 
-  constructor(private createQuizValidator: CreateQuizValidatorService, private customSnackBar: CustomSnackbarService) { }
+  constructor(
+    private createQuizValidator: CreateQuizValidatorService,
+    private customSnackBar: CustomSnackbarService,
+    private createQuizService: CreateQuizService
+  ) { }
 
   ngOnInit(): void {
     this.quizOverview = {
       title: '',
       description: ''
+    }
+    this.quizWrapper = {
+      quizOverview: this.quizOverview,
+      quizQuestions: this.quizQuestions
     }
   }
 
@@ -45,11 +54,8 @@ export class CreateQuizMainComponent implements OnInit {
     // Assign question numbers to quiz questions in the array
     this.quizQuestions = this.assignQuestionNumbers(this.quizQuestions)
 
-    // Wrap quiz models into QuizWrapper and send to server
-    this.quizWrapper = {
-      quizOverview: this.quizOverview,
-      quizQuestions: this.quizQuestions
-    }
+    // Send to server
+    this.createQuizService.createQuiz(this.quizWrapper)
   }
 
   assignQuestionNumbers(quizQuestions: QuizQuestion[]): QuizQuestion[] {
