@@ -61,7 +61,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     httpSecurity.csrf().disable()
 
         // dont authenticate this particular request
-        .authorizeRequests().antMatchers("/authenticate", "/register", "/quiz/insert").permitAll()
+        .authorizeRequests().antMatchers("/authenticate", "/register").permitAll()
 //        .authorizeRequests().antMatchers("/authenticate", "/register").permitAll()
 
         // all other requests need to be authenticated
@@ -81,7 +81,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
   @Override
   public void configure(WebSecurity web) throws Exception {
-    web.ignoring().antMatchers("/register", "/quiz/insert");
+    web.ignoring().antMatchers("/register");
   }
 
   @Bean
