@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { QuizQuestion } from '../../models/quiz-question';
-import { RadioOption } from 'src/app/quiz/models/radio-option';
+import { QuizOption } from '../../models/quiz-option';
 
 @Component({
   selector: 'quiz-question',
@@ -30,28 +30,28 @@ export class QuizQuestionComponent implements OnInit {
     this.onQuizQuestionChange()
   }
 
-  addOption() {
+  addQuizOption() {
     this.quizQuestion.quizOptions.push({
-      id: this.quizOptionId++,
+      quizOptionId: this.quizOptionId++,
       text: '',
       selected: false
     })
     this.onQuizQuestionChange()
   }
 
-  updateOption(option: RadioOption) {
+  updateQuizOption(quizOption: QuizOption) {
     this.quizQuestion.quizOptions = this.quizQuestion.quizOptions.map(o => {
-      return o.id === option.id ? option : o
+      return o.quizOptionId === quizOption.quizOptionId ? quizOption : o
     })
     this.onQuizQuestionChange()
   }
 
-  deleteOption(option: RadioOption) {
-    this.quizQuestion.quizOptions = this.quizQuestion.quizOptions.filter(o => o.id !== option.id)
+  deleteQuizOption(quizOption: QuizOption) {
+    this.quizQuestion.quizOptions = this.quizQuestion.quizOptions.filter(o => o.quizOptionId !== quizOption.quizOptionId)
     this.onQuizQuestionChange()
   }
 
-  deleteItem() {
+  deleteQuizQuestion() {
     this.deleteQuizQuestionChange.emit(this.quizQuestion)
   }
 

@@ -1,0 +1,8 @@
+<div class="quiz-option">
+    <div (click)='selectQuizOption()' class="check-circle" [ngClass]="{'selected': quizOption.selected}">
+        <i-feather class="check-icon" name='check'></i-feather>
+    </div>
+    <input [(ngModel)]='quizOption.text' (ngModelChange)='onQuizOptionChange()' class="input quiz-option-input" type="text"
+        placeholder="Option" />
+    <i-feather (click)='deleteQuizOption()' class="icon close-icon" name='x'></i-feather>
+</div>
