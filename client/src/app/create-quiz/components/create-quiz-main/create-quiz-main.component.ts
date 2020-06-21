@@ -4,6 +4,7 @@ import { QuizQuestion } from '../../models/quiz-question';
 import { CreateQuizValidatorService } from '../../services/create-quiz-validator.service';
 import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snackbar.service';
 import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
+import { QuizWrapper } from '../../models/quiz-wrapper';
 
 @Component({
   selector: 'app-create-quiz-main',
@@ -12,6 +13,7 @@ import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
 })
 export class CreateQuizMainComponent implements OnInit {
   @Output() createQuiz = new EventEmitter<boolean>()
+  quizWrapper: QuizWrapper
   quizOverview: QuizOverview
   quizQuestions: QuizQuestion[] = []
 
@@ -25,8 +27,6 @@ export class CreateQuizMainComponent implements OnInit {
   }
 
   saveQuiz() {
-    console.log(this.quizOverview, this.quizQuestions)
-
     if (!this.createQuizValidator.isValidQuizOverview(this.quizOverview)) {
       this.customSnackBar.openSnackBar('Please fill in all the quiz information.', SnackBarType.ERROR)
       return
@@ -42,8 +42,22 @@ export class CreateQuizMainComponent implements OnInit {
       return
     }
 
-    // TODO: Assign question numbers to quiz questions in the array
-    // TODO: Wrap quiz models into QuizWrapper
+    // Assign question numbers to quiz questions in the array
+    this.quizQuestions = this.assignQuestionNumbers(this.quizQuestions)
+
+    // Wrap quiz models into QuizWrapper and send to server
+    this.quizWrapper = {
+      quizOverview: this.quizOverview,
+      quizQuestions: this.quizQuestions
+    }
+  }
+
+  assignQuestionNumbers(quizQuestions: QuizQuestion[]): QuizQuestion[] {
+    let currentQuestionNumber = 1
+    return quizQuestions.map(question => {
+      question.questionNumber = currentQuestionNumber++
+      return question
+    })
   }
 
 }

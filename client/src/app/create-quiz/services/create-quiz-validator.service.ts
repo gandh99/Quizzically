@@ -30,18 +30,18 @@ export class CreateQuizValidatorService {
 
   // Returns true only if every option has a text, and there is 1 or more options selected
   private isValidQuizOptions(quizOptions: QuizOption[]): boolean {
-    let numSelected: number = 0
+    let numSelectedToBeCorrect: number = 0
     for (let option of quizOptions) {
       if (option.text === '') {
         return false
       }
 
-      if (option.selected) {
-        numSelected++
+      if (option.isCorrect) {
+        numSelectedToBeCorrect++
       }
     }
 
-    return numSelected > 0 ? true : false
+    return numSelectedToBeCorrect > 0 ? true : false
   }
 
 }
