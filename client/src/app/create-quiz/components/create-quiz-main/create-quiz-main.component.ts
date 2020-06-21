@@ -25,6 +25,8 @@ export class CreateQuizMainComponent implements OnInit {
   }
 
   saveQuiz() {
+    console.log(this.quizOverview, this.quizQuestions)
+
     if (!this.createQuizValidator.isValidQuizOverview(this.quizOverview)) {
       this.customSnackBar.openSnackBar('Please fill in all the quiz information.', SnackBarType.ERROR)
       return
@@ -39,6 +41,9 @@ export class CreateQuizMainComponent implements OnInit {
       this.customSnackBar.openSnackBar('Please fill in all quiz questions and options, and select at least 1 option per question.', SnackBarType.ERROR)
       return
     }
+
+    // TODO: Assign question numbers to quiz questions in the array
+    // TODO: Wrap quiz models into QuizWrapper
   }
 
 }

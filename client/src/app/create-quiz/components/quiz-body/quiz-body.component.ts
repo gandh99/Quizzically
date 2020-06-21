@@ -32,15 +32,15 @@ export class QuizBodyComponent implements OnInit {
     this.onQuizQuestionsChange()
   }
 
-  updateQuizQuestion(item: QuizQuestion) {
+  updateQuizQuestion(quizQuestion: QuizQuestion) {
     this.quizQuestions = this.quizQuestions.map(item => {
-      return item.quizQuestionId === item.quizQuestionId ? item : item
+      return item.questionNumber === quizQuestion.questionNumber ? quizQuestion : item
     })
     this.onQuizQuestionsChange()
   }
 
-  deleteQuizQuestion(item: QuizQuestion) {
-    this.quizQuestions = this.quizQuestions.filter(item => item.quizQuestionId !== item.quizQuestionId)
+  deleteQuizQuestion(quizQuestion: QuizQuestion) {
+    this.quizQuestions = this.quizQuestions.filter(item => item.questionNumber !== quizQuestion.questionNumber)
     this.onQuizQuestionsChange()
   }
 
