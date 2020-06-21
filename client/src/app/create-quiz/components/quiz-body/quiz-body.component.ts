@@ -10,13 +10,13 @@ export class QuizBodyComponent implements OnInit {
   @Input() quizQuestions: QuizQuestion[]
   @Output() quizQuestionsChange = new EventEmitter<QuizQuestion[]>()
   showBody: boolean
-  currentQuestionNumber: number
+  currentQuizQuestionId: number
 
   constructor() { }
 
   ngOnInit(): void {
     this.showBody = true
-    this.currentQuestionNumber = 0
+    this.currentQuizQuestionId = 0
   }
 
   toggleShowBody() {
@@ -25,7 +25,7 @@ export class QuizBodyComponent implements OnInit {
 
   addQuizQuestion() {
     this.quizQuestions.push({
-      questionNumber: this.currentQuestionNumber++,
+      quizQuestionId: this.currentQuizQuestionId++,
       question: '',
       quizOptions: [],
     })
@@ -34,13 +34,13 @@ export class QuizBodyComponent implements OnInit {
 
   updateQuizQuestion(quizQuestion: QuizQuestion) {
     this.quizQuestions = this.quizQuestions.map(item => {
-      return item.questionNumber === quizQuestion.questionNumber ? quizQuestion : item
+      return item.quizQuestionId === quizQuestion.quizQuestionId ? quizQuestion : item
     })
     this.onQuizQuestionsChange()
   }
 
   deleteQuizQuestion(quizQuestion: QuizQuestion) {
-    this.quizQuestions = this.quizQuestions.filter(item => item.questionNumber !== quizQuestion.questionNumber)
+    this.quizQuestions = this.quizQuestions.filter(item => item.quizQuestionId !== quizQuestion.quizQuestionId)
     this.onQuizQuestionsChange()
   }
 
