@@ -6,14 +6,16 @@ import com.gandh99.quizzically.quiz.quizOverview.QuizOverview;
 import com.gandh99.quizzically.quiz.quizOverview.QuizOverviewService;
 import com.gandh99.quizzically.quiz.quizQuestion.QuizQuestion;
 import com.gandh99.quizzically.quiz.quizQuestion.QuizQuestionService;
+import com.gandh99.quizzically.user.User;
+import com.gandh99.quizzically.user.UserService;
+import com.gandh99.quizzically.util.JwtUtil;
 import java.util.List;
+import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,21 +30,33 @@ public class QuizController {
   private final QuizOptionService quizOptionService;
 
   @Autowired
+  private final UserService userService;
+
+  @Autowired
+  private final JwtUtil jwtUtil;
+
+  @Autowired
   public QuizController(
       QuizOverviewService quizOverviewService,
       QuizQuestionService quizQuestionService,
-      QuizOptionService quizOptionService) {
+      QuizOptionService quizOptionService,
+      UserService userService,
+      JwtUtil jwtUtil) {
     this.quizOverviewService = quizOverviewService;
     this.quizQuestionService = quizQuestionService;
     this.quizOptionService = quizOptionService;
+    this.userService = userService;
+    this.jwtUtil = jwtUtil;
   }
 
   @PostMapping(path = "/insert")
   public ResponseEntity<String> insertQuiz(@Valid @NonNull @RequestBody QuizWrapper quizWrapper) {
     try {
-      Authentication x = SecurityContextHolder.getContext().getAuthentication();
+      Optional<User> user = jwtUtil.getUserFromPrincipal();
+
       // Insert quiz overview
       QuizOverview quizOverview = quizWrapper.getQuizOverview();
+      quizOverview.setOwnerId(user.get().getUserId());
       int quizOverviewId = quizOverviewService.insertQuizOverview(quizOverview);
 
       List<QuizQuestion> quizQuestionList = quizWrapper.getQuizQuestion();

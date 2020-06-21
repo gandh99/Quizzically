@@ -27,7 +27,7 @@ public class QuizOverviewDaoImpl implements QuizOverviewDao {
       );
 
       // TODO: Set to owner_id
-      statement.setInt(1, 21);
+      statement.setInt(1, quizOverview.getOwnerId());
       statement.setString(2, quizOverview.getTitle());
       statement.setString(3, quizOverview.getDescription());
       return statement;
