@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +40,7 @@ public class QuizController {
   @PostMapping(path = "/insert")
   public ResponseEntity<String> insertQuiz(@Valid @NonNull @RequestBody QuizWrapper quizWrapper) {
     try {
+      Authentication x = SecurityContextHolder.getContext().getAuthentication();
       // Insert quiz overview
       QuizOverview quizOverview = quizWrapper.getQuizOverview();
       int quizOverviewId = quizOverviewService.insertQuizOverview(quizOverview);
