@@ -1,7 +1,7 @@
 export interface QuizOption {
-    quizOptionId?: number,
+    quizOptionId: number,
     quizQuestionId?: number,
     text: string,
     selected: boolean,
-    isCorrect?: boolean
+    isCorrect: boolean
 }

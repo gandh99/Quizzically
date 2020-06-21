@@ -1,5 +1,5 @@
 <div class="quiz-option">
-    <div (click)='selectQuizOption()' class="check-circle" [ngClass]="{'selected': quizOption.selected}">
+    <div (click)='toggleIsCorrect()' class="check-circle" [ngClass]="{'selected': quizOption.isCorrect}">
         <i-feather class="check-icon" name='check'></i-feather>
     </div>
     <input [(ngModel)]='quizOption.text' (ngModelChange)='onQuizOptionChange()' class="input quiz-option-input" type="text"

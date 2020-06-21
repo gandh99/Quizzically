@@ -34,7 +34,8 @@ export class QuizQuestionComponent implements OnInit {
     this.quizQuestion.quizOptions.push({
       quizOptionId: this.quizOptionId++,
       text: '',
-      selected: false
+      selected: false,
+      isCorrect: false
     })
     this.onQuizQuestionChange()
   }

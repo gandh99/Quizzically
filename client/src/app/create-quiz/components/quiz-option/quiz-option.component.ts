@@ -16,8 +16,8 @@ export class QuizOptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectQuizOption() {
-    this.quizOption.selected = !this.quizOption.selected
+  toggleIsCorrect() {
+    this.quizOption.isCorrect = !this.quizOption.isCorrect
     this.onQuizOptionChange()
   }
 
