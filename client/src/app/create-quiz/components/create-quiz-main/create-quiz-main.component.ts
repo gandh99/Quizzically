@@ -53,9 +53,11 @@ export class CreateQuizMainComponent implements OnInit {
 
     // Assign question numbers to quiz questions in the array
     this.quizQuestions = this.assignQuestionNumbers(this.quizQuestions)
-
+    console.log(this.quizWrapper)
     // Send to server
-    this.createQuizService.createQuiz(this.quizWrapper)
+    this.createQuizService
+      .createQuiz(this.quizWrapper)
+      .subscribe(response => console.log(response))
   }
 
   assignQuestionNumbers(quizQuestions: QuizQuestion[]): QuizQuestion[] {

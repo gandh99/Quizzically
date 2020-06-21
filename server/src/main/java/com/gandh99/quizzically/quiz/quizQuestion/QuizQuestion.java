@@ -26,7 +26,7 @@ public class QuizQuestion {
   @Column(name = "question")
   private String question;
 
-  @JsonProperty("quizOption")
+  @JsonProperty("quizOptions")
   private List<QuizOption> quizOptionList;
 
   public QuizQuestion() {

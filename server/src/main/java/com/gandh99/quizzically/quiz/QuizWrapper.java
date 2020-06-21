@@ -9,7 +9,7 @@ public class QuizWrapper {
   @JsonProperty("quizOverview")
   private QuizOverview quizOverview;
 
-  @JsonProperty("quizQuestion")
+  @JsonProperty("quizQuestions")
   private List<QuizQuestion> quizQuestion;
 
   public QuizWrapper() {
