@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { QuizQuestion } from '../../models/draft-quiz-item';
+import { QuizQuestion } from '../../models/quiz-question';
 
 @Component({
   selector: 'quiz-body',
@@ -7,45 +7,45 @@ import { QuizQuestion } from '../../models/draft-quiz-item';
   styleUrls: ['./quiz-body.component.scss']
 })
 export class QuizBodyComponent implements OnInit {
-  @Input() quizItems: QuizQuestion[]
-  @Output() quizItemsChange = new EventEmitter<QuizQuestion[]>()
+  @Input() quizQuestions: QuizQuestion[]
+  @Output() quizQuestionsChange = new EventEmitter<QuizQuestion[]>()
   showBody: boolean
-  draftQuizItemId: number
+  currentQuestionNumber: number
 
   constructor() { }
 
   ngOnInit(): void {
     this.showBody = true
-    this.draftQuizItemId = 0
+    this.currentQuestionNumber = 0
   }
 
   toggleShowBody() {
     this.showBody = !this.showBody
   }
 
-  addQuizItem() {
-    this.quizItems.push({
-      id: this.draftQuizItemId++,
+  addQuizQuestion() {
+    this.quizQuestions.push({
+      questionNumber: this.currentQuestionNumber++,
       question: '',
-      options: [],
+      quizOptions: [],
     })
-    this.onQuizItemsChange()
+    this.onQuizQuestionsChange()
   }
 
-  updateQuizItem(item: QuizQuestion) {
-    this.quizItems = this.quizItems.map(quizItem => {
-      return item.id === quizItem.id ? item : quizItem
+  updateQuizQuestion(item: QuizQuestion) {
+    this.quizQuestions = this.quizQuestions.map(item => {
+      return item.quizQuestionId === item.quizQuestionId ? item : item
     })
-    this.onQuizItemsChange()
+    this.onQuizQuestionsChange()
   }
 
-  deleteQuizItem(item: QuizQuestion) {
-    this.quizItems = this.quizItems.filter(quizItem => quizItem.id !== item.id)
-    this.onQuizItemsChange()
+  deleteQuizQuestion(item: QuizQuestion) {
+    this.quizQuestions = this.quizQuestions.filter(item => item.quizQuestionId !== item.quizQuestionId)
+    this.onQuizQuestionsChange()
   }
 
-  onQuizItemsChange() {
-    this.quizItemsChange.emit(this.quizItems)
+  onQuizQuestionsChange() {
+    this.quizQuestionsChange.emit(this.quizQuestions)
   }
 
 }

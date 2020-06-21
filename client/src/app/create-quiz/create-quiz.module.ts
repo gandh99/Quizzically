@@ -6,7 +6,7 @@ import { MaterialUIModule } from '../material-ui/material-ui.module';
 import { QuizOverviewComponent } from './components/quiz-overview/quiz-overview.component';
 import { QuizBodyComponent } from './components/quiz-body/quiz-body.component';
 import { QuizSaveComponent } from './components/quiz-save/quiz-save.component';
-import { DraftQuizItemComponent } from './components/draft-quiz-item/draft-quiz-item.component';
+import { QuizQuestionComponent } from './components/quiz-question/quiz-question.component';
 import { FormsModule } from '@angular/forms';
 import { RadioOptionComponent } from './components/radio-option/radio-option.component';
 import { ReusableUiModule } from '../reusable-ui/reusable-ui.module';
@@ -14,7 +14,14 @@ import { ReusableUiModule } from '../reusable-ui/reusable-ui.module';
 
 
 @NgModule({
-  declarations: [CreateQuizMainComponent, QuizOverviewComponent, QuizBodyComponent, QuizSaveComponent, DraftQuizItemComponent, RadioOptionComponent],
+  declarations: [
+    CreateQuizMainComponent, 
+    QuizOverviewComponent, 
+    QuizBodyComponent, 
+    QuizSaveComponent, 
+    QuizQuestionComponent, 
+    RadioOptionComponent
+  ],
   imports: [
     CommonModule,
     IconsModule,
