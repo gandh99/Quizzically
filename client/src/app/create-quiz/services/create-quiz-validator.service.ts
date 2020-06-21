@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { QuizInformation } from '../models/quiz-information';
-import { DraftQuizItem } from '../models/draft-quiz-item';
+import { QuizOverview } from '../models/quiz-overview';
+import { QuizQuestion } from '../models/draft-quiz-item';
 import { RadioOption } from 'src/app/quiz/models/radio-option';
 
 @Injectable({
@@ -10,15 +10,15 @@ export class CreateQuizValidatorService {
 
   constructor() { }
 
-  isValidQuizInformation(quizInformation: QuizInformation) {
-    return quizInformation.title !== '' && quizInformation.description !== ''
+  isValidQuizOverview(quizOverview: QuizOverview) {
+    return quizOverview.title !== '' && quizOverview.description !== ''
   }
 
-  hasQuizItems(quizItems: DraftQuizItem[]) {
+  hasQuizItems(quizItems: QuizQuestion[]) {
     return quizItems.length > 0
   }
 
-  isValidQuizItems(quizItems: DraftQuizItem[]) {
+  isValidQuizItems(quizItems: QuizQuestion[]) {
     for (let item of quizItems) {
       if (item.question === '' || !this.isValidOptions(item.options)) {
         return false

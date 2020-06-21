@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { QuizInformation } from '../../models/quiz-information';
-import { DraftQuizItem } from '../../models/draft-quiz-item';
+import { QuizOverview } from '../../models/quiz-overview';
+import { QuizQuestion } from '../../models/draft-quiz-item';
 import { CreateQuizValidatorService } from '../../services/create-quiz-validator.service';
 import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snackbar.service';
 import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
@@ -12,20 +12,20 @@ import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
 })
 export class CreateQuizMainComponent implements OnInit {
   @Output() createQuiz = new EventEmitter<boolean>()
-  quizInformation: QuizInformation
-  quizItems: DraftQuizItem[] = []
+  quizOverview: QuizOverview
+  quizItems: QuizQuestion[] = []
 
   constructor(private createQuizValidator: CreateQuizValidatorService, private customSnackBar: CustomSnackbarService) { }
 
   ngOnInit(): void {
-    this.quizInformation = {
+    this.quizOverview = {
       title: '',
       description: ''
     }
   }
 
   saveQuiz() {
-    if (!this.createQuizValidator.isValidQuizInformation(this.quizInformation)) {
+    if (!this.createQuizValidator.isValidQuizOverview(this.quizOverview)) {
       this.customSnackBar.openSnackBar('Please fill in all the quiz information.', SnackBarType.ERROR)
       return
     }

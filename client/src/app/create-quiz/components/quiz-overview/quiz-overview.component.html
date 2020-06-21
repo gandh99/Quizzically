@@ -4,8 +4,8 @@
     <div class="title"><b>Step 1:</b> Fill in quiz information</div>
 </header>
 <main *ngIf='showBody'>
-    <custom-text-input [(value)]='quizInformation.title' (valueChange)='onQuizInformationChange()'
+    <custom-text-input [(value)]='quizOverview.title' (valueChange)='onQuizOverviewChange()'
         [placeholder]="'Quiz Title'"></custom-text-input>
-    <custom-text-input [(value)]='quizInformation.description' (valueChange)='onQuizInformationChange()'
+    <custom-text-input [(value)]='quizOverview.description' (valueChange)='onQuizOverviewChange()'
         [placeholder]="'Quiz Description'"></custom-text-input>
 </main>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { DraftQuizItem } from '../../models/draft-quiz-item';
+import { QuizQuestion } from '../../models/draft-quiz-item';
 import { RadioOption } from 'src/app/quiz/models/radio-option';
 
 @Component({
@@ -8,9 +8,9 @@ import { RadioOption } from 'src/app/quiz/models/radio-option';
   styleUrls: ['./draft-quiz-item.component.scss']
 })
 export class DraftQuizItemComponent implements OnInit {
-  @Input() quizItem: DraftQuizItem
-  @Output() deleteQuizItemChange = new EventEmitter<DraftQuizItem>()
-  @Output() updateQuizItemChange = new EventEmitter<DraftQuizItem>()
+  @Input() quizItem: QuizQuestion
+  @Output() deleteQuizItemChange = new EventEmitter<QuizQuestion>()
+  @Output() updateQuizItemChange = new EventEmitter<QuizQuestion>()
   showBody: boolean
   quizOptionId: number
 

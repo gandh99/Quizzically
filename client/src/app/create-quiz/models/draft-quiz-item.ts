@@ -1,6 +1,6 @@
 import { RadioOption } from './radio-option';
 
-export interface DraftQuizItem {
+export interface QuizQuestion {
     id: number,
     question: string,
     options: RadioOption[]
