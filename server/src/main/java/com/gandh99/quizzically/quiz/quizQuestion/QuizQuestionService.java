@@ -17,4 +17,8 @@ public class QuizQuestionService {
     return quizQuestionDao.insertQuizQuestion(quizQuestion);
   }
 
+  public QuizQuestion getQuizQuestions(int quizOverviewId) {
+    return quizQuestionDao.getQuizQuestions(quizOverviewId);
+  }
+
 }

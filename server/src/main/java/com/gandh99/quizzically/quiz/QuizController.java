@@ -9,6 +9,7 @@ import com.gandh99.quizzically.quiz.quizQuestion.QuizQuestionService;
 import com.gandh99.quizzically.user.User;
 import com.gandh99.quizzically.user.UserService;
 import com.gandh99.quizzically.util.JwtUtil;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
@@ -84,7 +85,17 @@ public class QuizController {
   @GetMapping("/get-quizzes")
   public QuizWrapper getQuizzes() {
     Optional<User> user = jwtUtil.getUserFromPrincipal();
+    List<QuizQuestion> quizQuestions = new ArrayList<>();
+
+    // Get the quiz overview
     List<QuizOverview> quizOverview = quizOverviewService.getQuizOverview(user.get());
+
+    quizOverview.forEach(overview -> {
+      // Get the quiz questions
+      int quizOverviewId = overview.getQuizOverviewId();
+      quizQuestions.add(quizQuestionService.getQuizQuestions(quizOverviewId));
+    });
+
     return null;
   }
 }
