@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface QuizQuestionDao {
   int insertQuizQuestion(QuizQuestion quizQuestion);
-  QuizQuestion getQuizQuestions(int quizOverviewId);
+  QuizQuestion getQuizQuestion(int quizOverviewId);
 }

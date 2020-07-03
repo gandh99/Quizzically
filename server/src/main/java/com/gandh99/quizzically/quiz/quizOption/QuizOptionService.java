@@ -1,5 +1,6 @@
 package com.gandh99.quizzically.quiz.quizOption;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -15,5 +16,9 @@ public class QuizOptionService {
 
   public void insertQuizOption(QuizOption quizOption) {
     quizOptionDao.insertQuizOption(quizOption);
+  }
+
+  public List<QuizOption> getQuizOptions(int quizQuestionId) {
+    return quizOptionDao.getQuizOptions(quizQuestionId);
   }
 }

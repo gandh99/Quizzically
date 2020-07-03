@@ -1,7 +1,10 @@
 package com.gandh99.quizzically.quiz.quizQuestion;
 
+import com.gandh99.quizzically.quiz.quizOption.QuizOption;
+import com.gandh99.quizzically.quiz.quizOption.QuizOptionService;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,11 +13,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository("quiz_questions")
 public class QuizQuestionDaoImpl implements QuizQuestionDao {
+
   private final JdbcTemplate jdbcTemplate;
+  private final QuizOptionService quizOptionService;
 
   @Autowired
-  public QuizQuestionDaoImpl(JdbcTemplate jdbcTemplate) {
+  public QuizQuestionDaoImpl(JdbcTemplate jdbcTemplate,
+      QuizOptionService quizOptionService) {
     this.jdbcTemplate = jdbcTemplate;
+    this.quizOptionService = quizOptionService;
   }
 
   @Override
@@ -36,7 +43,7 @@ public class QuizQuestionDaoImpl implements QuizQuestionDao {
   }
 
   @Override
-  public QuizQuestion getQuizQuestions(int quizOverviewId) {
+  public QuizQuestion getQuizQuestion(int quizOverviewId) {
     final String sql = "SELECT * FROM quiz_questions WHERE quiz_overview_id = ?";
 
     try {
@@ -48,7 +55,11 @@ public class QuizQuestionDaoImpl implements QuizQuestionDao {
             int questionNumber = resultSet.getInt("question_number");
             String question = resultSet.getString("question");
 
-            return new QuizQuestion(quizQuestionId, quizOverviewId, questionNumber, question, null);
+            // Get the quiz options for this quiz question
+            List<QuizOption> quizOptions = quizOptionService.getQuizOptions(quizQuestionId);
+
+            return new QuizQuestion(quizQuestionId, quizOverviewId, questionNumber, question,
+                quizOptions);
           })
       );
     } catch (EmptyResultDataAccessException emptyResultDataAccessException) {

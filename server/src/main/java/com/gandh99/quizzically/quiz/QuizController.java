@@ -83,19 +83,23 @@ public class QuizController {
   }
 
   @GetMapping("/get-quizzes")
-  public QuizWrapper getQuizzes() {
+  public List<QuizWrapper> getQuizzes() {
     Optional<User> user = jwtUtil.getUserFromPrincipal();
-    List<QuizQuestion> quizQuestions = new ArrayList<>();
+    List<QuizWrapper> quizWrappers = new ArrayList<>();
 
     // Get the quiz overview
     List<QuizOverview> quizOverview = quizOverviewService.getQuizOverview(user.get());
 
     quizOverview.forEach(overview -> {
       // Get the quiz questions
+      List<QuizQuestion> quizQuestions = new ArrayList<>();
       int quizOverviewId = overview.getQuizOverviewId();
-      quizQuestions.add(quizQuestionService.getQuizQuestions(quizOverviewId));
+      quizQuestions.add(quizQuestionService.getQuizQuestion(quizOverviewId));
+
+      // Add quiz overview and quiz questions into the quiz wrapper list
+      quizWrappers.add(new QuizWrapper(overview, quizQuestions));
     });
 
-    return null;
+    return quizWrappers;
   }
 }
