@@ -84,7 +84,7 @@ public class QuizController {
   @GetMapping("/get-quizzes")
   public QuizWrapper getQuizzes() {
     Optional<User> user = jwtUtil.getUserFromPrincipal();
-    System.out.println(user.get().getUsername());
+    List<QuizOverview> quizOverview = quizOverviewService.getQuizOverview(user.get());
     return null;
   }
 }
