@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,5 +79,12 @@ public class QuizController {
       e.printStackTrace();
       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+  }
+
+  @GetMapping("/get-quizzes")
+  public QuizWrapper getQuizzes() {
+    Optional<User> user = jwtUtil.getUserFromPrincipal();
+    System.out.println(user.get().getUsername());
+    return null;
   }
 }

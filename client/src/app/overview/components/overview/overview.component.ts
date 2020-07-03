@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { GetQuizzesService } from '../../services/get-quizzes.service';
 
 @Component({
   selector: 'app-overview',
@@ -8,9 +9,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class OverviewComponent implements OnInit {
   @Output() createQuiz = new EventEmitter<boolean>()
 
-  constructor() { }
+  constructor(private getQuizzesService: GetQuizzesService) { }
 
   ngOnInit(): void {
+    this.getQuizzesService.getQuizzes().subscribe(res => console.log(res))
   }
 
 }
