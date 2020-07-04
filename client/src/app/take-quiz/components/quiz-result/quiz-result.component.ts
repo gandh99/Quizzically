@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { QuizWrapper } from 'src/app/create-quiz/models/quiz-wrapper';
 import { QuizQuestion } from 'src/app/create-quiz/models/quiz-question';
 
@@ -9,6 +9,7 @@ import { QuizQuestion } from 'src/app/create-quiz/models/quiz-question';
 })
 export class QuizResultComponent implements OnInit {
   @Input() quizWrapper: QuizWrapper
+  @Output() onQuizRestart = new EventEmitter<any>()
   quizQuestions: QuizQuestion[]
   numCorrect: number = 0
 
@@ -33,6 +34,10 @@ export class QuizResultComponent implements OnInit {
     }
 
     return true
+  }
+
+  restartQuiz() {
+    this.onQuizRestart.emit()
   }
 
 }

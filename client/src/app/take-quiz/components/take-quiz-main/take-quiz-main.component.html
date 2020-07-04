@@ -17,6 +17,7 @@
         </app-quiz-body>
         <app-quiz-result 
             [quizWrapper]='quizWrapper' 
+            (onQuizRestart)='restartQuiz()'
             *ngIf='quizStage === QuizStage.QUIZ_RESULT'>
         </app-quiz-result>
     </main>

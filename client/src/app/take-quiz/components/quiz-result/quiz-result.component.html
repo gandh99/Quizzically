@@ -8,6 +8,6 @@
         <div class="raw-score">{{numCorrect}} of {{quizQuestions.length}}</div>
     </div>
     <div class="button-container">
-        <custom-button [variant]='"secondary"' [buttonText]='"Back to Start"'></custom-button>
+        <custom-button (buttonClick)='restartQuiz()' [variant]='"secondary"' [buttonText]='"Back to Start"'></custom-button>
     </div>
 </div>
