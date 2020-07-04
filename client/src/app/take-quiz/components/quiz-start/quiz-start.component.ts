@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetQuizService } from '../../services/get-quiz.service';
+import { QuizWrapper } from 'src/app/create-quiz/models/quiz-wrapper';
 
 @Component({
   selector: 'app-quiz-start',
@@ -8,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class QuizStartComponent implements OnInit {
   quizCode: string
 
-  constructor() { }
+  constructor(private getQuizService: GetQuizService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.quizCode)
+    this.getQuizService.getQuiz(this.quizCode).subscribe((res: QuizWrapper) => console.log(res))
   }
 
 }
