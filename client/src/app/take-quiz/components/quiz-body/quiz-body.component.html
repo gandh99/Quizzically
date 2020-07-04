@@ -7,7 +7,9 @@
         <div class="question">{{quizQuestions[currentQuestionIndex].question}}</div>
     </header>
     <main>
-        <app-quiz-option *ngFor='let option of quizQuestions[currentQuestionIndex].quizOptions' [text]='option.text'>
+        <app-quiz-option 
+        *ngFor='let option of quizQuestions[currentQuestionIndex].quizOptions' 
+        [quizOption]='option'>
         </app-quiz-option>
     </main>
     <footer>

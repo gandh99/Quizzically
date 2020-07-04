@@ -12,23 +12,26 @@
     opacity: 0.6;
 }
 
-.container:hover, .selected {
+.container:hover,
+.check-circle-selected,
+.container-selected {
     opacity: 1;
+}
+
+.check-circle-selected {
+    background-color: styles.$primary-color-light;
 }
 
 .check-circle {
     height: 1rem;
     width: 1rem;
+    margin-right: 1rem;
     border-radius: 50%;
     border: solid 1px #bbbbbb;
-    margin-right: 1rem;
+    cursor: pointer;
 
     .check-icon {
         color: #ffffff;
         width: 0.9rem;
     }
-}
-
-.selected {
-    background-color: styles.$primary-color-light;
 }

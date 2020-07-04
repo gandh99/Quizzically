@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="check-circle">
+<div (click)='checkOption()' [ngClass]="{'container': true, 'container-selected': quizOption.selected}">
+    <div class="check-circle" [ngClass]="{'check-circle-selected': quizOption.selected}">
         <i-feather class="check-icon" name='check'></i-feather>
     </div>
-    <div class="text">{{text}}</div>
+    <div class="text">{{quizOption.text}}</div>
 </div>
