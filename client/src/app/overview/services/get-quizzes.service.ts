@@ -12,7 +12,7 @@ export class GetQuizzesService {
 
   constructor(private http: HttpClient) { }
 
-  getQuizzes(): Observable<QuizWrapper> {
-    return this.http.get<any>(this.endpoint)
+  getQuizzes(): Observable<QuizWrapper[]> {
+    return this.http.get<QuizWrapper[]>(this.endpoint)
   }
 }
