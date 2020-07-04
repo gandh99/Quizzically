@@ -92,14 +92,24 @@ public class QuizController {
 
     quizOverview.forEach(overview -> {
       // Get the quiz questions
-      List<QuizQuestion> quizQuestions = new ArrayList<>();
       int quizOverviewId = overview.getQuizOverviewId();
-      quizQuestions.add(quizQuestionService.getQuizQuestion(quizOverviewId));
+      List<QuizQuestion> quizQuestions = quizQuestionService.getQuizQuestions(quizOverviewId);
 
       // Add quiz overview and quiz questions into the quiz wrapper list
       quizWrappers.add(new QuizWrapper(overview, quizQuestions));
     });
 
     return quizWrappers;
+  }
+
+  @GetMapping("/get-quiz")
+  public QuizWrapper getQuizByQuizOverviewId(int quizOverviewId) {
+    // Get quiz overview
+    QuizOverview quizOverview = quizOverviewService.getQuizOverviewById(quizOverviewId);
+
+    // Get quiz questions
+    List<QuizQuestion> quizQuestions = quizQuestionService.getQuizQuestions(quizOverviewId);
+
+    return new QuizWrapper(quizOverview, quizQuestions);
   }
 }

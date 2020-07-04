@@ -23,4 +23,8 @@ public class QuizOverviewService {
     return quizOverviewDao.getQuizOverview(user);
   }
 
+  public QuizOverview getQuizOverviewById(int quizOverviewId) {
+    return quizOverviewDao.getQuizOverviewById(quizOverviewId);
+  }
+
 }

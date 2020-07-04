@@ -61,4 +61,25 @@ public class QuizOverviewDaoImpl implements QuizOverviewDao {
       return null;
     }
   }
+
+  @Override
+  public QuizOverview getQuizOverviewById(int quizOverviewId) {
+    final String sql = "SELECT * FROM quiz_overview WHERE quiz_overview_id = ?";
+
+    try {
+      return jdbcTemplate.queryForObject(
+          sql,
+          new Object[]{quizOverviewId},
+          ((resultSet, i) -> {
+            int ownerId = resultSet.getInt("owner_id");
+            String title = resultSet.getString("title");
+            String description = resultSet.getString("description");
+
+            return new QuizOverview(quizOverviewId, ownerId, title, description, null);
+          })
+      );
+    } catch (EmptyResultDataAccessException emptyResultDataAccessException) {
+      return null;
+    }
+  }
 }

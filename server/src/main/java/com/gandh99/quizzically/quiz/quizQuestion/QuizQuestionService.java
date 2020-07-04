@@ -1,5 +1,6 @@
 package com.gandh99.quizzically.quiz.quizQuestion;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,8 @@ public class QuizQuestionService {
     return quizQuestionDao.insertQuizQuestion(quizQuestion);
   }
 
-  public QuizQuestion getQuizQuestion(int quizOverviewId) {
-    return quizQuestionDao.getQuizQuestion(quizOverviewId);
+  public List<QuizQuestion> getQuizQuestions(int quizOverviewId) {
+    return quizQuestionDao.getQuizQuestions(quizOverviewId);
   }
 
 }

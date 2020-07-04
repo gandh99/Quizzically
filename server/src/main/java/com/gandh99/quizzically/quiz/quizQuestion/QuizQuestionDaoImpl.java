@@ -43,11 +43,11 @@ public class QuizQuestionDaoImpl implements QuizQuestionDao {
   }
 
   @Override
-  public QuizQuestion getQuizQuestion(int quizOverviewId) {
+  public List<QuizQuestion> getQuizQuestions(int quizOverviewId) {
     final String sql = "SELECT * FROM quiz_questions WHERE quiz_overview_id = ?";
 
     try {
-      return jdbcTemplate.queryForObject(
+      return jdbcTemplate.query(
           sql,
           new Object[]{quizOverviewId},
           ((resultSet, i) -> {

@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-start.component.scss']
 })
 export class QuizStartComponent implements OnInit {
+  quizCode: string
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    console.log(this.quizCode)
   }
 
 }

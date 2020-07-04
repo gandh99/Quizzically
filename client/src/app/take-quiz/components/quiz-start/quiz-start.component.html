@@ -1,5 +1,5 @@
 <div class="root">
     <div class="instructions">Enter the quiz code and click start.</div>
-    <custom-text-input [placeholder]='"Enter quiz code"'></custom-text-input>
-    <custom-button [buttonText]='"Start Quiz"' [variant]='"secondary"'></custom-button>
+    <custom-text-input [(value)]='quizCode' [placeholder]='"Enter quiz code"'></custom-text-input>
+    <custom-button (buttonClick)='onSubmit()' [buttonText]='"Start Quiz"' [variant]='"secondary"'></custom-button>
 </div>

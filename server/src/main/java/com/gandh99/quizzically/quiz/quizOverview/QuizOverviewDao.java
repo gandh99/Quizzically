@@ -6,4 +6,5 @@ import java.util.List;
 public interface QuizOverviewDao {
   int insertQuizOverview(QuizOverview quizOverview);
   List<QuizOverview> getQuizOverview(User user);
+  QuizOverview getQuizOverviewById(int quizOverviewId);
 }
