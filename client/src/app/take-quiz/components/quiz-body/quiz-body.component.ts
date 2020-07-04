@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { QuizWrapper } from 'src/app/create-quiz/models/quiz-wrapper';
 
 @Component({
   selector: 'app-quiz-body',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-body.component.scss']
 })
 export class QuizBodyComponent implements OnInit {
-
+  @Input() quizWrapper: QuizWrapper
+  
   constructor() { }
 
   ngOnInit(): void {

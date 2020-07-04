@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
-import { QuizModule } from './quiz/quiz.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { HomeModule } from './home/home.module';
 import { httpInterceptorProviders } from './http-interceptors';
@@ -19,7 +18,6 @@ import { httpInterceptorProviders } from './http-interceptors';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    QuizModule,
     AuthenticationModule,
     HomeModule
   ],

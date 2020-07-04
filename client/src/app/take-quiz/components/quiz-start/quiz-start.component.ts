@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { GetQuizService } from '../../services/get-quiz.service';
 import { QuizWrapper } from 'src/app/create-quiz/models/quiz-wrapper';
 
@@ -8,6 +8,7 @@ import { QuizWrapper } from 'src/app/create-quiz/models/quiz-wrapper';
   styleUrls: ['./quiz-start.component.scss']
 })
 export class QuizStartComponent implements OnInit {
+  @Output() quizWrapper = new EventEmitter<QuizWrapper>()
   quizCode: string
 
   constructor(private getQuizService: GetQuizService) { }
@@ -16,7 +17,7 @@ export class QuizStartComponent implements OnInit {
   }
 
   onSubmit() {
-    this.getQuizService.getQuiz(this.quizCode).subscribe((res: QuizWrapper) => console.log(res))
+    this.getQuizService.getQuiz(this.quizCode).subscribe((res: QuizWrapper) => this.quizWrapper.emit(res))
   }
 
 }
