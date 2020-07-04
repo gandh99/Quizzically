@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-quiz-option',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-option.component.scss']
 })
 export class QuizOptionComponent implements OnInit {
+  @Input() text: string
 
   constructor() { }
 

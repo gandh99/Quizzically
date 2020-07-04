@@ -1,20 +1,16 @@
 <div class="root">
     <header>
         <div class="question-number-container">
-            Question 1<span class="total-questions">/10</span>
+            Question {{currentQuestionNumber}}<span class="total-questions">/{{quizQuestions.length}}</span>
         </div>
         <hr />
-        <div class="question">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, officiis eaque! Minima animi placeat nam
-            soluta
-            vel fuga, eaque facilis.
-        </div>
+        <div class="question">{{quizQuestions[currentQuestionIndex].question}}</div>
     </header>
     <main>
-        <app-quiz-option></app-quiz-option>
-        <app-quiz-option></app-quiz-option>
-        <app-quiz-option></app-quiz-option>
-        <app-quiz-option></app-quiz-option>
+        <app-quiz-option 
+            *ngFor='let option of quizQuestions[currentQuestionIndex].quizOptions' 
+            [text]='option.text'>
+        </app-quiz-option>
     </main>
     <footer>
         <button class="button previous-button">Previous</button>

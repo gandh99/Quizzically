@@ -11,7 +11,7 @@ export class GetQuizService {
 
   constructor(private http: HttpClient) { }
 
-  getQuiz(quizCode: String): Observable<QuizWrapper> {
+  getQuiz(quizCode: string): Observable<QuizWrapper> {
     return this.http.get<QuizWrapper>(`${this.endpoint}/id?id=${quizCode}`)
   }
 
