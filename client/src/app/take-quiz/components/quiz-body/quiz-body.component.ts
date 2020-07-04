@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { QuizWrapper } from 'src/app/create-quiz/models/quiz-wrapper';
 import { QuizOverview } from 'src/app/create-quiz/models/quiz-overview';
 import { QuizQuestion } from 'src/app/create-quiz/models/quiz-question';
@@ -10,6 +10,7 @@ import { QuizQuestion } from 'src/app/create-quiz/models/quiz-question';
 })
 export class QuizBodyComponent implements OnInit {
   @Input() quizWrapper: QuizWrapper
+  @Output() onQuizEnd = new EventEmitter<any>()
   quizOverview: QuizOverview
   quizQuestions: QuizQuestion[]
   currentQuestionIndex: number = 0
@@ -30,6 +31,8 @@ export class QuizBodyComponent implements OnInit {
   next() {
     if (this.currentQuestionIndex < this.quizQuestions.length - 1) {
       this.currentQuestionIndex++
+    } else {
+      this.onQuizEnd.emit()
     }
   }
 

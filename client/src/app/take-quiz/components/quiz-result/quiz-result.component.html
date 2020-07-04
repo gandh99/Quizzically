@@ -1,8 +1,11 @@
 <div class="container">
     <div class="message">You scored</div>
     <div class="score-container">
-        <div class="percentage-score">80<span class="percent-sign">%</span></div>
-        <div class="raw-score">8 of 10</div>
+        <div class="percentage-score">
+            {{numCorrect / quizQuestions.length * 100 | number: '1.0-0'}}
+            <span class="percent-sign">%</span>
+        </div>
+        <div class="raw-score">{{numCorrect}} of {{quizQuestions.length}}</div>
     </div>
     <div class="button-container">
         <custom-button [variant]='"secondary"' [buttonText]='"Back to Start"'></custom-button>

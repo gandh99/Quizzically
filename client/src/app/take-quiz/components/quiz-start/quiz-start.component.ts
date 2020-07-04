@@ -17,7 +17,11 @@ export class QuizStartComponent implements OnInit {
   }
 
   onSubmit() {
-    this.getQuizService.getQuiz(this.quizCode).subscribe((res: QuizWrapper) => this.quizWrapper.emit(res))
+    this.getQuizService.getQuiz(this.quizCode).subscribe((res: QuizWrapper) => {
+      // Set all options to have "selected" = false by default
+      res.quizQuestions.map(question => question.quizOptions.map(option => option.selected = false))
+      this.quizWrapper.emit(res)
+    })
   }
 
 }

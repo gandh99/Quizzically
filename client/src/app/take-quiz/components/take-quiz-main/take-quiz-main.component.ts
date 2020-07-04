@@ -24,4 +24,8 @@ export class TakeQuizMainComponent implements OnInit {
     this.quizStage = QuizStage.QUIZ_BODY
   }
 
+  endQuiz() {
+    this.quizStage = QuizStage.QUIZ_RESULT
+  }
+
 }

@@ -6,8 +6,18 @@
         <div class="title">Take Quiz</div>
     </header>
     <main>
-        <app-quiz-start (quizWrapper)='startQuiz($event)' *ngIf='quizStage === QuizStage.QUIZ_START'></app-quiz-start>
-        <app-quiz-body [quizWrapper]='quizWrapper' *ngIf='quizStage === QuizStage.QUIZ_BODY'></app-quiz-body>
-        <app-quiz-result *ngIf='quizStage === QuizStage.QUIZ_RESULT'></app-quiz-result>
+        <app-quiz-start 
+            (quizWrapper)='startQuiz($event)' 
+            *ngIf='quizStage === QuizStage.QUIZ_START'>
+        </app-quiz-start>
+        <app-quiz-body 
+            [quizWrapper]='quizWrapper' 
+            (onQuizEnd)='endQuiz()' 
+            *ngIf='quizStage === QuizStage.QUIZ_BODY'>
+        </app-quiz-body>
+        <app-quiz-result 
+            [quizWrapper]='quizWrapper' 
+            *ngIf='quizStage === QuizStage.QUIZ_RESULT'>
+        </app-quiz-result>
     </main>
 </div>
