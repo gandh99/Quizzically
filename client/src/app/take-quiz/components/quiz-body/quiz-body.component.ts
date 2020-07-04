@@ -12,14 +12,25 @@ export class QuizBodyComponent implements OnInit {
   @Input() quizWrapper: QuizWrapper
   quizOverview: QuizOverview
   quizQuestions: QuizQuestion[]
-  currentQuestionIndex: Number = 0
-  currentQuestionNumber: Number = 1
+  currentQuestionIndex: number = 0
 
   constructor() { }
 
   ngOnInit(): void {
     this.quizOverview = this.quizWrapper.quizOverview
     this.quizQuestions = this.quizWrapper.quizQuestions
+  }
+
+  previous() {
+    if (this.currentQuestionIndex > 0) {
+      this.currentQuestionIndex--
+    }
+  }
+
+  next() {
+    if (this.currentQuestionIndex < this.quizQuestions.length - 1) {
+      this.currentQuestionIndex++
+    }
   }
 
 }

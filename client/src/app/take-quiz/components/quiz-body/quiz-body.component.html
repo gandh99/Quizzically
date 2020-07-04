@@ -1,19 +1,18 @@
 <div class="root">
     <header>
         <div class="question-number-container">
-            Question {{currentQuestionNumber}}<span class="total-questions">/{{quizQuestions.length}}</span>
+            Question {{currentQuestionIndex + 1}}<span class="total-questions">/{{quizQuestions.length}}</span>
         </div>
         <hr />
         <div class="question">{{quizQuestions[currentQuestionIndex].question}}</div>
     </header>
     <main>
-        <app-quiz-option 
-            *ngFor='let option of quizQuestions[currentQuestionIndex].quizOptions' 
-            [text]='option.text'>
+        <app-quiz-option *ngFor='let option of quizQuestions[currentQuestionIndex].quizOptions' [text]='option.text'>
         </app-quiz-option>
     </main>
     <footer>
-        <button class="button previous-button">Previous</button>
-        <custom-button class="button" [variant]='"primary"' [buttonText]='"Next"'></custom-button>
+        <button class="button previous-button" (click)='previous()'>Previous</button>
+        <custom-button class="button" (buttonClick)='next()' [variant]='"primary"' [buttonText]='"Next"'>
+        </custom-button>
     </footer>
 </div>
