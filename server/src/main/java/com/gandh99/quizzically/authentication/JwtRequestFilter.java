@@ -1,5 +1,6 @@
 package com.gandh99.quizzically.authentication;
 
+import io.jsonwebtoken.MalformedJwtException;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -40,6 +41,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         System.out.println("Unable to get JWT Token");
       } catch (ExpiredJwtException e) {
         System.out.println("JWT Token has expired");
+      } catch (MalformedJwtException e) {
+        System.out.println("Invalid JWT string provided");
       }
     } else {
       logger.warn("JWT Token does not begin with Bearer String");

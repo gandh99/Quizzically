@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'quiz', component: TakeQuizMainComponent },
   { path: 'authentication', component: AuthenticationMainComponent },
   { path: 'home', component: HomepageComponent, canActivate: [AuthenticationGuard] },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthenticationGuard] },
   { path: '**', redirectTo: '/authentication', pathMatch: 'full' }
 ];
 
