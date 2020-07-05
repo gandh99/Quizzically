@@ -6,6 +6,7 @@ import { CustomSnackbarService } from 'src/app/material-ui/services/custom-snack
 import { SnackBarType } from 'src/app/material-ui/snackbar/snackbar';
 import { QuizWrapper } from '../../models/quiz-wrapper';
 import { CreateQuizService } from '../../services/create-quiz.service';
+import { GetQuizzesService } from 'src/app/overview/services/get-quizzes.service';
 
 @Component({
   selector: 'app-create-quiz-main',
@@ -21,7 +22,8 @@ export class CreateQuizMainComponent implements OnInit {
   constructor(
     private createQuizValidator: CreateQuizValidatorService,
     private customSnackBar: CustomSnackbarService,
-    private createQuizService: CreateQuizService
+    private createQuizService: CreateQuizService,
+    private customSnackbarService: CustomSnackbarService
   ) { }
 
   ngOnInit(): void {
@@ -57,7 +59,10 @@ export class CreateQuizMainComponent implements OnInit {
     // Send to server
     this.createQuizService
       .createQuiz(this.quizWrapper)
-      .subscribe(response => console.log(response))
+      .subscribe(response => {
+        this.createQuiz.emit(false)
+        this.customSnackbarService.openSnackBar('Successfully created quiz.', SnackBarType.SUCCESS)
+      })
   }
 
   assignQuestionNumbers(quizQuestions: QuizQuestion[]): QuizQuestion[] {
